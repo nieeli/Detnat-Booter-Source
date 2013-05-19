@@ -1,14 +1,11 @@
-<?php
-require 'includes/db.php';
-require 'includes/init.php';
-?>
+<?php ob_start(); require 'includes/db.php'; require 'includes/init.php'; ?>
 <!DOCTYPE html>
 <!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
-		<title><?php echo $title_prefix; ?>Login</title>
+		<title><?php echo $title_prefix; ?>Register</title>
 		<meta name="description" content="">
 		<meta name="author" content="Walking Pixels | www.walkingpixels.com">
 		<meta name="robots" content="index, follow">
@@ -52,70 +49,65 @@ require 'includes/init.php';
 							<header>
 								<h2>
 									<span class="icon-lock"></span>
-									Login
+									Register
 								</h2>
 							</header>
 							<section>
-<?php
-if (!($user -> LoggedIn()))
-{
-	if (isset($_POST['loginBtn']))
-	{
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$errors = array();
-		if (!ctype_alnum($username) || strlen($username) < 4 || strlen($username) > 15)
+	<?php
+		if ($user -> LoggedIn())
 		{
-			$errors[] = 'Username must be alphanumberic and 4-15 characters in length';
+			header('Location: index.php');
+			echo 'balls';
+			die();
 		}
 		
-		if (empty($username) || empty($password))
+		if (isset($_POST['registerBtn']))
 		{
-			$errors[] = 'Please fill in all fields';
-		}
-		
-		if (empty($errors))
-		{
-			$SQLCheckLogin = $odb -> prepare("SELECT COUNT(*) FROM `users` WHERE `username` = :username AND `password` = :password");
-			$SQLCheckLogin -> execute(array(':username' => $username, ':password' => SHA1($password)));
-			$countLogin = $SQLCheckLogin -> fetchColumn(0);
-			if ($countLogin == 1)
+			$username = $_POST['username'];
+			$password = $_POST['password'];
+			$rpassword = $_POST['rpassword'];
+			$email = $_POST['email'];
+			$errors = array();
+			$checkUsername = $odb -> prepare("SELECT COUNT(*) FROM `users` WHERE `username` = :username");
+			$checkUsername -> execute(array(':username' => $username));
+			$countUsername = $checkUsername -> fetchColumn(0);
+			if ($checkUsername > 0)
 			{
-				$SQLGetInfo = $odb -> prepare("SELECT `username`, `ID` FROM `users` WHERE `username` = :username AND `password` = :password");
-				$SQLGetInfo -> execute(array(':username' => $username, ':password' => SHA1($password)));
-				$userInfo = $SQLGetInfo -> fetch(PDO::FETCH_ASSOC);
-				if ($userInfo['status'] == 0)
-				{
-					$_SESSION['username'] = $userInfo['username'];
-					$_SESSION['ID'] = $userInfo['ID'];
-					echo '<strong>SUCCESS: </strong>Login Successful. Redirecting...<meta http-equiv="refresh" content="2;url=index.php">';
-				}
-				else
-				{
-					echo '<strong>ERROR: </strong>Your are banned';
-				}
+				$errors['Username is already taken'];
+			}
+			if (!ctype_alnum($username) || strlen($username) < 4 || strlen($username) > 15)
+			{
+				$errors[] = 'Username Must Be  Alphanumberic And 4-15 characters in length';
+			}
+			if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+			{
+				$errors[] = 'Email is invalid';
+			}
+			if (empty($username) || empty($password) || empty($rpassword) || empty($email))
+			{
+				$errors[] = 'Please fill in all fields';
+			}
+			if ($password != $rpassword)
+			{
+				$errors[] = 'Passwords do not match';
+			}
+			if (empty($errors))
+			{
+				$insertUser = $odb -> prepare("INSERT INTO `users` VALUES(NULL, :username, :password, :email, 0, 0, 0, 0)");
+				$insertUser -> execute(array(':username' => $username, ':password' => SHA1($password), ':email' => $email));
+				echo '<strong>SUCCESS: </strong>User has been registered.  Redirecting...<meta http-equiv="refresh" content="2;url=login.php">';
 			}
 			else
 			{
-				echo '<strong>ERROR: </strong>Login Failed';
+				echo '<strong>ERROR:</strong><br />';
+				foreach($errors as $error)
+				{
+					echo '-'.$error.'<br />';
+				}
+				echo '';
 			}
 		}
-		else
-		{
-			echo '<strong>ERROR:</strong><br />';
-			foreach($errors as $error)
-			{
-				echo '-'.$error.'<br />';
-			}
-			echo '';
-		}
-	}
-}
-else
-{
-	header('location: index.php');
-}
-?>
+		?>
 								<form class="form-horizontal" action="" method="POST">
 									<div class="control-group">
 										<label class="control-label" for="inputEmail">Username</label>
@@ -130,11 +122,22 @@ else
 										</div>
 									</div>
 									<div class="control-group">
+										<label class="control-label" for="inputPassword">Repeat Password</label>
+										<div class="controls">
+											<input type="password" name="rpassword" id="rpassword" placeholder="Password">
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="inputPassword">Email</label>
+										<div class="controls">
+											<input type="text" name="email" id="email" placeholder="Email">
+										</div>
+									</div>
+									<div class="control-group">
 										<div class="controls">
 											<label class="checkbox">
-												<input type="checkbox"> Remember me
 											</label>
-											<button type="submit" name="loginBtn" class="btn">Sign in</button>
+											<button type="submit" name="registerBtn" class="btn">Register</button>
 										</div>
 									</div>
 								</form>
