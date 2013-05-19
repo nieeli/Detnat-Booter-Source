@@ -37,7 +37,7 @@ require_once 'includes/db.php';
 									<a href="index.php" class="no-submenu"><span class="icon-home"></span>Dashboard</a>
 								</li>
 								<li>
-									<a href="proxy.php" class="no-submenu"><span class="icon-signal"></span>HUB</a>
+									<a href="hub.php" class="no-submenu"><span class="icon-signal"></span>HUB</a>
 								</li>
 								<li>
 									<a href="proxy.php" class="no-submenu"><span class="icon-signal"></span>Friends and Enemies</a>
