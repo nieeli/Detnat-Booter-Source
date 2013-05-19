@@ -1,10 +1,14 @@
+<?php
+require 'includes/db.php';
+require 'includes/init.php';
+?>
 <!DOCTYPE html>
 <!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
-		<title>Login | Lindworm Responsive Admin Template</title>
+		<title><?php echo $title_prefix; ?>Login</title>
 		<meta name="description" content="">
 		<meta name="author" content="Walking Pixels | www.walkingpixels.com">
 		<meta name="robots" content="index, follow">

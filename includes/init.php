@@ -20,5 +20,5 @@ $_SERVER['REMOTE_ADDR'] = getRealIpAddr();
 require 'functions.php';
 $user = new user;
 $stats = new stats;
-$title_prefix = "Love Stresser | ";
+$title_prefix = "Detnat | ";
 ?>
