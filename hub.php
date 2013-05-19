@@ -40,7 +40,7 @@ if (!($user -> notBanned($odb)))
 		<link rel='stylesheet' type='text/css' href='css/plugins/bootstrap-wysihtml5.css'>
 
 		<!-- Style -->
-		<link rel="stylesheet" href="css/lindworm-dark.css">
+		<link rel="stylesheet" href="css/lindworm-blue.css">
 		
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="favicon.ico">
@@ -123,7 +123,7 @@ if (!($user -> notBanned($odb)))
 								<article class="span12 data-block tabbed-block highlight highlight-red">
 									<div class="data-container">
 										<header>
-											<h2>Form elements</h2>
+											<h2>HUB</h2>
 											<ul class="data-header-actions tabs">
 												<li class="demoTabs active"><a href="#horizontal">Boot HUB</a></li>
 											</ul>
