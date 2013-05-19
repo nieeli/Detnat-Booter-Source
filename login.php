@@ -41,7 +41,7 @@ require 'includes/init.php';
 					<article class="span12 login-header">
 
 						<!-- Sample logo -->
-						<a href="index.html" class="brand" title="Back to homepage">Lindworm Responsive Twitter Bootstrap Admin Template</a>
+						<a href="index.html" class="brand" title="Back to homepage"></a>
 
 					</article>
 					<!-- /Data block -->
@@ -56,18 +56,77 @@ require 'includes/init.php';
 								</h2>
 							</header>
 							<section>
-
-								<form class="form-horizontal">
+<?php
+if (!($user -> LoggedIn()))
+{
+	if (isset($_POST['loginBtn']))
+	{
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$errors = array();
+		if (!ctype_alnum($username) || strlen($username) < 4 || strlen($username) > 15)
+		{
+			$errors[] = 'Username must be alphanumberic and 4-15 characters in length';
+		}
+		
+		if (empty($username) || empty($password))
+		{
+			$errors[] = 'Please fill in all fields';
+		}
+		
+		if (empty($errors))
+		{
+			$SQLCheckLogin = $odb -> prepare("SELECT COUNT(*) FROM `users` WHERE `username` = :username AND `password` = :password");
+			$SQLCheckLogin -> execute(array(':username' => $username, ':password' => SHA1($password)));
+			$countLogin = $SQLCheckLogin -> fetchColumn(0);
+			if ($countLogin == 1)
+			{
+				$SQLGetInfo = $odb -> prepare("SELECT `username`, `ID` FROM `users` WHERE `username` = :username AND `password` = :password");
+				$SQLGetInfo -> execute(array(':username' => $username, ':password' => SHA1($password)));
+				$userInfo = $SQLGetInfo -> fetch(PDO::FETCH_ASSOC);
+				if ($userInfo['status'] == 0)
+				{
+					$_SESSION['username'] = $userInfo['username'];
+					$_SESSION['ID'] = $userInfo['ID'];
+					echo '<strong>SUCCESS: </strong>Login Successful. Redirecting...<meta http-equiv="refresh" content="2;url=index.php">';
+				}
+				else
+				{
+					echo '<strong>ERROR: </strong>Your are banned';
+				}
+			}
+			else
+			{
+				echo '<strong>ERROR: </strong>Login Failed';
+			}
+		}
+		else
+		{
+			echo '<strong>ERROR:</strong><br />';
+			foreach($errors as $error)
+			{
+				echo '-'.$error.'<br />';
+			}
+			echo '';
+		}
+	}
+}
+else
+{
+	header('location: index.php');
+}
+?>
+								<form class="form-horizontal" action="" method="POST">
 									<div class="control-group">
 										<label class="control-label" for="inputEmail">Username</label>
 										<div class="controls">
-											<input type="text" id="inputEmail" placeholder="Your username">
+											<input type="text" name="username" id="username" placeholder="Your username">
 										</div>
 									</div>
 									<div class="control-group">
 										<label class="control-label" for="inputPassword">Password</label>
 										<div class="controls">
-											<input type="password" id="inputPassword" placeholder="Password">
+											<input type="password" name="password" id="password" placeholder="Password">
 										</div>
 									</div>
 									<div class="control-group">
@@ -75,7 +134,7 @@ require 'includes/init.php';
 											<label class="checkbox">
 												<input type="checkbox"> Remember me
 											</label>
-											<button type="submit" class="btn">Sign in</button>
+											<button type="submit" name="loginBtn" class="btn">Sign in</button>
 										</div>
 									</div>
 								</form>
@@ -92,13 +151,7 @@ require 'includes/init.php';
 			<!-- /Main content -->
 
 		<!-- Main footer -->
-		<footer id="footer">
-			<ul>
-				<li><a href="#">Lost password?</a></li>
-				<li><a href="#">Support</a></li>
-				<li><a href="#">Back to page</a></li>
-			</ul>
-		</footer>
+
 		<!-- /Main footer -->
 		
 	</body>
