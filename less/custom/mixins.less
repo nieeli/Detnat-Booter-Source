@@ -1,0 +1,133 @@
+//
+// Custom mixins
+// --------------------------------------------------
+
+
+// Complementary colors
+@base:                 #fff;
+@complement1:          spin(@base, 180);
+@complement2:          darken(spin(@base, 180), 5%);
+@lighten1:             lighten(@base, 15%);
+@lighten2:             lighten(@base, 30%);
+
+// Subtle colors
+@base:                 #fff;
+@lighter1:             lighten(spin(@base, 5), 10%);
+@lighter2:             lighten(spin(@base, 10), 20%);
+@darker1:              darken(spin(@base, -5), 10%);
+@darker2:              darken(spin(@base, -10), 20%);
+
+
+// Replace text with image
+.image-replacer(@path, @repeat, @height, @width) {
+	display: block;
+	background-image: url("@{path}");
+	background-repeat: @repeat;
+	.hide-text();
+	.size(@height, @width);
+}
+
+// Make clean OL or UL list
+.clear-list() {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// Reset margin if only one
+.clear-orphan() {
+	&:only-of-type {
+		margin: 0;
+		float: none;
+	}
+}
+
+// Primary button text color fix
+.primaryButtonTextColor (@a) when (@a = @lindwormBlue) {
+	color: @infoText;
+}
+.primaryButtonTextColor (@a) when (@a = @lindwormGreen) {
+	color: @successText;
+}
+.primaryButtonTextColor (@a) when (@a = @lindwormRed) {
+	color: @errorText;
+	text-shadow: 0 1px 0 rgba(0,0,0,.75);
+	&:hover {
+		color: @white;
+	}
+}
+.primaryButtonTextColor (@a) when (@a = @lindwormYellow) {
+	color: @warningText;
+}
+.primaryButtonTextColor (@a) when (@a = @lindwormDark) {
+	color: @white;
+	text-shadow: 0 1px 0 rgba(0,0,0,.75);
+	&:hover {
+		color: @white;
+	}
+}
+
+// Lindworm buttons
+.lindwormButtonPreset(@bgColor, @bgHighlightColor) {
+	#gradient > .vertical (@bgColor, @bgHighlightColor);
+	&:hover {
+		#gradient > .vertical (lighten(@bgColor, 8%), @bgHighlightColor);
+	}
+	&.active,
+	&:active {
+		#gradient > .vertical (@bgHighlightColor, @bgColor);
+	}
+}
+
+// Flat buttons
+.flatButtonBackground(@startColor, @typeColor) {
+	.reset-filter();
+	border: none;
+	background-image: none;
+	background-color: @startColor;
+	color: @typeColor;
+	text-shadow: none;
+	.box-shadow(none);
+	&:hover {
+		background-color: darken(@startColor, 10%);
+	}
+}
+
+// Footer text color fix
+.footerTextColor (@a) when (@a = @lindwormBlue) {
+	text-shadow: 0 1px 0 fadeout(@white, 80%);
+	a {
+		color: @a;
+		text-shadow: 0 1px 0 fadeout(@black, 80%);
+	}
+}
+.footerTextColor (@a) when (@a = @lindwormGreen) {
+	text-shadow: 0 1px 0 fadeout(@white, 60%);
+	a {
+		color: darken(@a, 15%);
+		text-shadow: 0 1px 0 fadeout(@white, 60%);
+	}
+}
+.footerTextColor (@a) when (@a = @lindwormRed) {
+	text-shadow: 0 1px 0 fadeout(@white, 60%);
+	a {
+		color: lighten(@a, 20%);
+		text-shadow: 0 1px 0 fadeout(@black, 60%);
+	}
+}
+.footerTextColor (@a) when (@a = @lindwormYellow) {
+	color: @black;
+	text-shadow: 0 1px 0 fadeout(@white, 80%);
+	a {
+		color: lighten(@templateColor, 7%);
+		text-shadow: 0 1px 0 fadeout(@black, 60%);
+	}
+}
+.footerTextColor (@a) when (@a = @lindwormDark) {
+	color: @black;
+	text-shadow: 0 1px 0 fadeout(@white, 80%);
+	a {
+		color: @white;
+		text-shadow: 0 1px 0 fadeout(@black, 50%);
+	}
+}

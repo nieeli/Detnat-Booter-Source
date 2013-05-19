@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>Calendar | Lindworm Responsive Admin Template</title>
+		<meta name="description" content="">
+		<meta name="author" content="Walking Pixels | www.walkingpixels.com">
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- jQuery FullCalendar Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.fullcalendar.css'>
+		
+		<!-- Style -->
+		<link rel="stylesheet" href="css/lindworm-blue.css">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		
+		<!-- JS Libs -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/libs/jquery.js"><\/script>')</script>
+		<script src="js/libs/modernizr.js"></script>
+		<script src="js/libs/selectivizr.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				
+				// Tabs
+				$('.demoTabs a').click(function (e) {
+					e.preventDefault();
+					$(this).tab('show');
+					$('.fullcalendar-demo, .fullcalendar-gcal').fullCalendar('render'); // Refresh jQuery FullCalendar for hidden tabs
+				})
+				
+				// Sidebar slide
+				$('.nav-slide').pageslide();
+				$(window).resize(function() {
+					$.pageslide.close();
+				});
+
+				// Tooltips
+				$('.user-profile-actions li a').tooltip({
+					placement: 'bottom'
+				});
+
+			});
+		</script>
+		
+	<body>
+		
+		<!-- Wrap all page content for sticky footer -->
+		<div id="wrapper">
+
+			<!-- Main page container -->
+			<div class="container">
+
+				<!-- Secondary navigation -->
+				<ul class="secondary-navigation">
+					<li><a href="#">Settings</a>
+					<li><a href="#">Logout</a>
+				</ul>
+				<!-- /Secondary navigation -->
+
+				<!-- Container style -->
+				<div class="container-inner">
+
+					<!-- Left (navigation) side -->
+					<!-- Sidebar -->
+					<div class="sidebar" id="nav">
+
+						<!-- Sample logo -->
+						<a href="index.html" class="brand" title="Back to homepage">Lindworm Responsive Twitter Bootstrap Admin Template</a> 
+						
+						<!-- User profile -->
+						<div class="user-profile">
+							<img alt="John Pixel avatar" src="http://placekitten.com/60/60">
+							<div>
+								<a href="#">John Pixel</a>
+								<em>marketing manager</em>
+								<ul class="user-profile-actions">
+									<li><a href="#" title="Open mailbox"><span class="icon-envelope"></span></a></li>
+									<li><a href="#" title="Personal settings"><span class="icon-cogs"></span></a></li>
+									<li><a href="#" title="Logout"><span class="icon-key"></span></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /User profile -->
+						
+						<!-- Main navigation -->
+						<nav class="main-navigation" role="navigation">
+							<ul>
+								<li>
+									<a href="index.html" class="no-submenu"><span class="icon-home"></span>Dashboard</a>
+								</li>
+								<li>
+									<a href="forms.html" class="no-submenu"><span class="icon-tasks"></span>Forms</a>
+								</li>
+								<li>
+									<a href="charts.html" class="no-submenu"><span class="icon-signal"></span>Charts</a>
+								</li>
+								<li>
+									<a href="tables.html" class="no-submenu"><span class="icon-list"></span>Tables</a>
+								</li>
+								<li>
+									<a href="gallery.html"><span class="icon-picture"></span>Gallery</a>
+									<ul>
+										<li><a href="gallery.html">Car Gallery</a></li>
+										<li><a href="gallery.html">Food Gallery</a></li>
+										<li><a href="gallery.html">Art Gallery</a></li>
+										<li><a href="gallery.html">Animal Gallery</a></li>
+										<li><a href="gallery.html">Super long name to see how it collapse</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="file-explorer.html" class="no-submenu"><span class="icon-file"></span>File explorer</a>
+								</li>
+								<li class="active">
+									<a href="calendar.html" class="no-submenu"><span class="icon-calendar"></span>Calendar</a>
+								</li>
+								<li>
+									<a href="ui-buttons.html" class="no-submenu"><span class="icon-website"></span>UI &amp; Buttons</a>
+								</li>
+								<li>
+									<a href="typo.html" class="no-submenu"><span class="icon-font"></span>Typography</a>
+								</li>
+								<li>
+									<a href="grid.html" class="no-submenu"><span class="icon-th"></span>Grid</a>
+								</li>
+								<li>
+									<a href="goodies.html"><span class="icon-gift"></span>Goodies</a>
+									<ul>
+										<li><a href="goodies.html">Goodies</a></li>
+										<li><a href="401.html">Error 401</a></li>
+										<li><a href="403.html">Error 403</a></li>
+										<li><a href="404.html">Error 404</a></li>
+										<li><a href="500.html">Error 500</a></li>
+										<li><a href="503.html">Error 503</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+						<!-- /Main navigation -->
+						
+						<!-- Sidebar note -->
+						<div class="sidebar-note">
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+							<a href="#" class="btn btn-primary btn-flat">Details &rarr;</a>
+						</div>
+						<!-- /Sidebar note -->
+
+					</div>
+					<!-- /Sidebar -->
+					<!-- /Left (navigation) side -->
+
+					<!-- Right (content) side -->
+					<!-- Main content -->
+					<div class="content">
+
+						<!-- Page header -->
+						<header class="page-header">
+
+							<!-- Slide btn for sidebar navigation -->
+							<a class="nav-slide" href="#nav">
+								<span class="icon-align-justify"></span>
+							</a>
+
+							<h1>Welcome, stranger!</h1>
+						</header>
+						<!-- /Page header -->
+				
+						<!-- Page container -->
+						<section class="page-container" role="main">
+
+							<!-- Breadcrumbs -->
+							<ul class="breadcrumb">
+								<li><a href="#"><span class="icon-home"></span> Home</a> <span class="icon-chevron-right"></span></li>
+								<li><a href="#">Lindworm Bootstrap Template</a> <span class="icon-chevron-right"></span></li>
+								<li class="active">Calendar</li>
+							</ul>
+							<!-- Breadcrumbs -->
+							
+							<!-- Grid row -->
+							<div class="row-fluid">
+							
+								<!-- Example jQuery FullCalendar -->
+								<!-- Data block -->
+								<article class="span12 data-block">
+									<div class="data-container">
+										<header>
+											<h2>Basic calendar setup</h2>
+											<ul class="data-header-actions tabs">
+												<li class="demoTabs active"><a href="#basic">Basic</a></li>
+												<li class="demoTabs"><a href="#google">Google</a></li>
+											</ul>
+										</header>
+										<section class="tab-content">
+										
+											<!-- Tab #basic -->
+											<div class="tab-pane active" id="basic">
+												<div class='fullcalendar fullcalendar-demo'></div>
+											</div>
+											<!-- /Tab #basic -->
+											
+											<!-- Tab #google -->
+											<div class="tab-pane" id="google">
+												<div class='fullcalendar fullcalendar-gcal'></div>
+											</div>
+											<!-- /Tab #google -->
+											
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+							</div>
+							<!-- /Grid row -->
+
+						</section>
+						<!-- /Page container -->
+
+					</div>
+					<!-- /Main content -->
+					<!-- /Right (content) side -->
+
+				</div>
+				<!-- /Container style -->
+
+			</div>
+			<!-- /Main page container -->
+
+			<!-- Push space for footer -->
+			<div id="push"></div>
+			
+		</div>
+		<!-- /Wrap all page content for sticky footer -->
+		
+		<!-- Main footer -->
+		<footer id="footer">
+			<ul>
+				<li>Built with love on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> by <a href="http://www.walkingpixels.com/">Walking Pixels</a>.</li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Documentation</a></li>
+				<li><a href="#">Support</a></li>
+			</ul>
+		</footer>
+		<!-- /Main footer -->
+
+		<!-- Scripts -->
+		<script src="js/navigation.js"></script>
+
+		<!-- Bootstrap scripts -->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+		
+		<!-- jQuery FullCalendar -->
+		<script src="js/plugins/fullCalendar/jquery.fullcalendar.min.js"></script>
+		
+		<!-- Google Calendar plugin for jQuery FullCalendar -->
+		<script src="js/plugins/fullCalendar/gcal.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+			
+				var date = new Date();
+				var d = date.getDate();
+				var m = date.getMonth();
+				var y = date.getFullYear();
+				
+				$('.fullcalendar-demo').fullCalendar({
+					header: {
+						left: 'title',
+						center: '',
+						right: 'today month,basicWeek prev,next'
+					},
+					buttonText: {
+						prev: '<span class="icon-arrow-left"></span>',
+						next: '<span class="icon-arrow-right"></span>'
+					},
+					editable: true,
+					events: [
+						{
+							title: 'All Day Event',
+							start: new Date(y, m, 1)
+						},
+						{
+							title: 'Long Event',
+							start: new Date(y, m, d-5),
+							end: new Date(y, m, d-2),
+							className: 'event-red'
+						},
+						{
+							id: 999,
+							title: 'Repeating Event',
+							start: new Date(y, m, d-3, 16, 0),
+							allDay: false,
+							className: 'event-yellow'
+						},
+						{
+							id: 999,
+							title: 'Repeating Event',
+							start: new Date(y, m, d+4, 16, 0),
+							allDay: false,
+							className: 'event-green'
+						},
+						{
+							title: 'Meeting',
+							start: new Date(y, m, d, 10, 30),
+							allDay: false,
+							className: 'event-blue'
+						},
+						{
+							title: 'Lunch',
+							start: new Date(y, m, d, 12, 0),
+							end: new Date(y, m, d, 14, 0),
+							allDay: false,
+							className: 'event-red'
+						},
+						{
+							title: 'Birthday Party',
+							start: new Date(y, m, d+1, 19, 0),
+							end: new Date(y, m, d+1, 22, 30),
+							allDay: false,
+							className: 'event-green'
+						},
+						{
+							title: 'Walking Pixels website',
+							start: new Date(y, m, 28),
+							end: new Date(y, m, 29),
+							url: 'http://www.walkingpixels.com/',
+							className: 'event-black'
+						}
+					]
+				});
+				
+				$('.fullcalendar-gcal').fullCalendar({
+					header: {
+						left: 'title',
+						center: '',
+						right: 'today month,basicWeek prev,next'
+					},
+					buttonText: {
+						prev: '<span class="icon-arrow-left"></span>',
+						next: '<span class="icon-arrow-right"></span>'
+					},
+					events: {
+						url: 'http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic',
+						className: 'gcal-event', // an option!
+						currentTimezone: 'America/Chicago' // an option!
+					}
+				});
+				
+			});
+		</script>
+
+		<!-- Page slide plugin -->
+		<script src="js/plugins/pageSlide/jquery.pageslide.min.js"></script>
+		
+	</body>
+</html>

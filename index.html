@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>Dashboard | Lindworm Responsive Admin Template</title>
+		<meta name="description" content="">
+		<meta name="author" content="Walking Pixels | www.walkingpixels.com">
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- jQuery FullCalendar Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.fullcalendar.css'>
+		
+		<!-- jQuery jGrowl Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.jgrowl.css'>
+
+		<!-- Style -->
+		<link rel="stylesheet" href="css/lindworm-blue.css">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		
+		<!-- JS Libs -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/libs/jquery.js"><\/script>')</script>
+		<script src="js/libs/modernizr.js"></script>
+		<script src="js/libs/selectivizr.js"></script>
+
+		<script>
+			$(document).ready(function() {
+
+				// Sidebar slide
+				$('.nav-slide').pageslide();
+				$(window).resize(function() {
+					$.pageslide.close();
+				});
+
+				// Tooltips
+				$('.user-profile-actions li a').tooltip({
+					placement: 'bottom'
+				});
+
+			});
+		</script>
+		
+	<body>
+	
+		<!-- Wrap all page content for sticky footer -->
+		<div id="wrapper">
+			
+			<!-- Main page container -->
+			<div class="container">
+	
+				<!-- Secondary navigation -->
+				<ul class="secondary-navigation">
+					<li><a href="#">Settings</a>
+					<li><a href="#">Logout</a>
+				</ul>
+				<!-- /Secondary navigation -->
+	
+				<!-- Container style -->
+				<div class="container-inner">
+	
+					<!-- Left (navigation) side -->
+					<!-- Sidebar -->
+					<div class="sidebar" id="nav">
+						
+						<!-- Sample logo -->
+						<a href="index.html" class="brand" title="Back to homepage">Lindworm Responsive Twitter Bootstrap Admin Template</a>
+						
+						<!-- User profile -->
+						<div class="user-profile">
+							<img alt="John Pixel avatar" src="http://placekitten.com/60/60">
+							<div>
+								<a href="#">John Pixel</a>
+								<em>marketing manager</em>
+								<ul class="user-profile-actions">
+									<li><a href="#" title="Open mailbox"><span class="icon-envelope"></span></a></li>
+									<li><a href="#" title="Personal settings"><span class="icon-cogs"></span></a></li>
+									<li><a href="#" title="Logout"><span class="icon-key"></span></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /User profile -->
+						
+						<!-- Main navigation -->
+						<nav class="main-navigation iconic" role="navigation">
+							<ul>
+								<li class="active">
+									<a href="index.html" class="no-submenu"><span class="icon-home"></span>Dashboard</a>
+								</li>
+								<li>
+									<a href="forms.html" class="no-submenu"><span class="icon-tasks"></span>Forms</a>
+								</li>
+								<li>
+									<a href="charts.html" class="no-submenu"><span class="icon-signal"></span>Charts</a>
+								</li>
+								<li>
+									<a href="tables.html" class="no-submenu"><span class="icon-list"></span>Tables</a>
+								</li>
+								<li>
+									<a href="gallery.html"><span class="icon-picture"></span>Gallery</a>
+									<ul>
+										<li><a href="gallery.html">Car Gallery</a></li>
+										<li><a href="gallery.html">Food Gallery</a></li>
+										<li><a href="gallery.html">Art Gallery</a></li>
+										<li><a href="gallery.html">Animal Gallery</a></li>
+										<li><a href="gallery.html">Super long name to see how it collapse</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="file-explorer.html" class="no-submenu"><span class="icon-file"></span>File explorer</a>
+								</li>
+								<li>
+									<a href="calendar.html" class="no-submenu"><span class="icon-calendar"></span>Calendar</a>
+								</li>
+								<li>
+									<a href="ui-buttons.html" class="no-submenu"><span class="icon-website"></span>UI &amp; Buttons</a>
+								</li>
+								<li>
+									<a href="typo.html" class="no-submenu"><span class="icon-font"></span>Typography</a>
+								</li>
+								<li>
+									<a href="grid.html" class="no-submenu"><span class="icon-th"></span>Grid</a>
+								</li>
+								<li>
+									<a href="goodies.html"><span class="icon-gift"></span>Goodies</a>
+									<ul>
+										<li><a href="goodies.html">Goodies</a></li>
+										<li><a href="401.html">Error 401</a></li>
+										<li><a href="403.html">Error 403</a></li>
+										<li><a href="404.html">Error 404</a></li>
+										<li><a href="500.html">Error 500</a></li>
+										<li><a href="503.html">Error 503</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+						<!-- /Main navigation -->
+						
+						<!-- Sidebar note -->
+						<div class="sidebar-note">
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+							<a href="#" class="btn btn-flat btn-danger">Details &rarr;</a>
+						</div>
+						<!-- /Sidebar note -->
+						
+					</div>
+					<!-- /Sidebar -->
+					<!-- /Left (navigation) side -->
+					
+					<!-- Right (content) side -->
+					<!-- Main content -->
+					<div class="content">
+					
+						<!-- Page header -->
+						<header class="page-header">
+							<ul class="page-header-actions">
+								<li><a href="#" class="btn btn-alt btn-primary">Export</a></li>
+							</ul>
+
+							<!-- Slide btn for sidebar navigation -->
+							<a class="nav-slide" href="#nav">
+								<span class="icon-align-justify"></span>
+							</a>
+
+							<h1>Welcome, stranger!</h1>
+							<p>Lindworm in British heraldry, is a technical term for a wingless bipedal dragon often with a venomous bite, like a poisonous snake or Komodo dragon. Lindworms are very large and eat cattle and bodies, sometimes invading churchyards and eating the dead from cemeteries. The shed skin of a lindworm was believed to greatly increase a person's knowledge about nature and medicine.</p>
+						</header>
+						<!-- /Page header -->
+						
+						<!-- Page container -->
+						<section class="page-container" role="main">
+						
+							<!-- Breadcrumbs -->
+							<ul class="breadcrumb">
+								<li><a href="#"><span class="icon-home"></span> Home</a> <span class="icon-chevron-right"></span></li>
+								<li><a href="#">Lindworm Bootstrap Template</a> <span class="icon-chevron-right"></span></li>
+								<li class="active">Dashboard</li>
+							</ul>
+							<!-- Breadcrumbs -->
+							
+							<!-- Grid row -->
+							<div class="row">
+							
+								<!-- Data block -->
+								<article class="span12 data-block">
+									<div class="data-container">
+										<section>
+											<div id="demo-1" class="flot"></div>
+											
+											<!-- Widgets -->
+											<ul class="widgets">
+											
+												<!-- Basic widget item -->
+												<li>
+													<span class="widget-label">Last month</span>
+													<strong>$ 352 855</strong>
+												</li>
+												<!-- /Basic widget item -->
+												
+												<!-- Clickable widget item -->
+												<li>
+													<a href="#">
+														<span class="widget-label"><span class="icon-star"></span> Today</span>
+														<strong>$ 912</strong>
+													</a>
+												</li>
+												<!-- /Clickable widget item -->
+												
+												<!-- Widgets with graphs -->
+												<li>
+													<span class="sparkline line">1,4,4,7,5,9,10,7,6,5,3,5</span>
+													<strong>Orders</strong>
+												</li>
+												
+												<li>
+													<span class="sparkline bar"></span>
+													<a href="#">Inovices</a>
+												</li>
+												<!-- /Widgets with graphs -->
+												
+											</ul>
+											<!-- /Widgets -->
+											
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et maecenas id augue ac metus tempus aliquam. Sed pharetra placerat suscipit sagittis.</p>
+											
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+							</div>
+							<!-- /Grid row -->
+	
+							<!-- Grid row -->
+							<div class="row">
+							
+								<!-- Data block -->
+								<article class="span4 data-block data-block-alt highlight highlight-green">
+									<div class="data-container">
+										<header>
+											<h2><span class="icon-signal"></span> Statistics</h2>
+											<ul class="data-header-actions">
+												<li><a href="#" class="btn">Export</a></li>
+											</ul>
+										</header>
+										<section>
+											<ul class="stats">
+												<li>
+													<strong class="stats-count">17</strong>
+													<p>New registrations</p>
+													<a class="btn btn-mini btn-primary" href="#" title="View new registrations">View</a>
+												</li>
+												<li>
+													<strong class="stats-count">89</strong>
+													<p>New visitors</p>
+													<a class="btn btn-mini btn-primary" title="View new visitros" href="#">View</a> <a class="btn btn-mini" href="#">Export</a>
+												</li>
+												<li>
+													<strong class="stats-count">346</strong>
+													<p>New sales</p>
+													<a class="btn btn-mini btn-primary" title="View new sales" href="#">View</a> <a class="btn btn-mini" href="#">Export</a>
+												</li>
+												<li>
+													<strong class="stats-count">266</strong>
+													<p>New orders</p>
+													<a class="btn btn-mini btn-primary" href="#" title="View new orders">View</a> <a class="btn btn-mini" href="#">Export</a>
+												</li>
+												<li>
+													<strong class="stats-count">124</strong>
+													<p>New requests</p>
+													<a class="btn btn-mini btn-primary" title="View new requests" href="#">View</a> <a class="btn btn-mini" href="#">Export</a>
+												</li>
+											</ul>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+								<!-- Data block -->
+								<article class="span4 data-block data-block-alt highlight todo-block">
+									<div class="data-container">
+										<header>
+											<h2><span class="icon-edit"></span> Simple TODO list</h2>
+											<ul class="data-header-actions">
+												<li>
+													<span class="loading" title="Loading, please wait&hellip;">Loading&hellip;</span>
+												</li>
+											</ul>
+										</header>
+										<section>
+											<form>
+												<table class="table">
+													<tbody>
+														<tr class="done">
+															<td><input type="checkbox" value="done" checked></td>
+															<td>
+																<p>doItNow(); does not work as expected</p>
+																<span>completed <time>Apr 12</time></span>
+															</td>
+														</tr>
+														<tr>
+															<td><input type="checkbox" value="done"></td>
+															<td>
+																<p>buy some more socks</p>
+																<span>due <time>Apr 12</time></span>
+															</td>
+														</tr>
+														<tr>
+															<td><input type="checkbox" value="done"></td>
+															<td>
+																<p><span class="label label-important">Important</span> meeting at 10:30 am</p>
+																<span>due <time>Apr 12</time></span>
+															</td>
+														</tr>
+														<tr>
+															<td><input type="checkbox" value="done"></td>
+															<td>
+																<p>take out the trash</p>
+																<span>due <time>Apr 17</time></span>
+															</td>
+														</tr>
+														<tr>
+															<td><input type="checkbox" value="done"></td>
+															<td>
+																<p><span class="label label-success">Party</span> Erick birthday</p>
+																<span>due <time>Apr 22</time></span>
+															</td>
+														</tr>
+														<tr>
+															<td><input type="checkbox" value="done"></td>
+															<td>
+																<p>return books to the library</p>
+																<span>due <time>May 02</time></span>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</form>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+								<!-- Data block -->
+								<article class="span4 data-block-alt data-block">
+									<div class="data-container">
+										<header>
+											<h2><span class="icon-refresh"></span> Accordion</h2>
+											<ul class="data-header-actions">
+												<li class="dropdown">
+													<button class="btn dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+													<ul class="dropdown-menu pull-right">
+														<li><a href="#">Action</a></li>
+														<li><a href="#">Another action</a></li>
+														<li><a href="#">Something else here</a></li>
+														<li class="divider"></li>
+														<li><a href="#">Separated link</a></li>
+													</ul>
+												</li>
+											</ul>
+										</header>
+										<section>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam justo velit, eleifend nec adipiscing id, consequat ut augue. Pellentesque nec neque et leo ullamcorper pellentesque. Pellentesque aliquet iaculis velit sit amet vestibulum.</p>
+											<div id="accordion1" class="accordion">
+												<div class="accordion-group">
+													<div class="accordion-heading">
+														<a class="accordion-toggle" href="#collapseOne" data-parent="#accordion1" data-toggle="collapse"> Leggings occaecat craft <span class="caret"></span></a>
+													</div>
+													<div id="collapseOne" class="accordion-body collapse">
+														<div class="accordion-inner">Anim  cliche reprehenderit, enim eiusmod high life  terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda  et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+													</div>
+												</div>
+												<div class="accordion-group">
+													<div class="accordion-heading">
+														<a class="accordion-toggle" href="#collapseTwo" data-parent="#accordion1" data-toggle="collapse"> Ad vegan excepteur butcher <span class="caret"></span></a>
+													</div>
+													<div id="collapseTwo" class="accordion-body collapse">
+														<div class="accordion-inner">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+													</div>
+												</div>
+												<div class="accordion-group">
+													<div class="accordion-heading">
+														<a class="accordion-toggle" href="#collapseThree" data-parent="#accordion1" data-toggle="collapse"> Nihil anim keffiyeh <span class="caret"></span></a>
+													</div>
+													<div id="collapseThree" class="accordion-body collapse">
+														<div class="accordion-inner">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+							</div>
+							<!-- /Grid row -->
+	
+							<div class="alert alert-info fade in">
+								<button class="close" data-dismiss="alert">&times;</button>
+								<strong>Info alert box!</strong> Also a blue one for tips and info highlights.
+							</div>
+	
+							<!-- Grid row -->
+							<div class="row">
+								
+								<!-- Data block -->
+								<article class="span4 data-block">
+									<div class="data-container">
+										<header>
+											<h2>Event logs</h2>
+										</header>
+										<section>
+											<p>Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+											<p>
+												<span class="emo-confuse" title=".emo-confuse"></span>
+												<span class="emo-cool" title=".emo-cool"></span>
+												<span class="emo-cry" title=".emo-cry"></span>
+												<span class="emo-evilgrin" title=".emo-evilgrin"></span>
+												<span class="emo-fat" title=".emo-fat"></span>
+												<span class="emo-grin" title=".emo-grin"></span>
+												<span class="emo-happy" title=".emo-happy"></span>
+												<span class="emo-mad" title=".emo-mad"></span>
+												<span class="emo-neutral" title=".emo-neutral"></span>
+												<span class="emo-red" title=".emo-red"></span>
+												<span class="emo-roll" title=".emo-roll"></span>
+												<span class="emo-slim" title=".emo-slim"></span>
+												<span class="emo-smile" title=".emo-smile"></span>
+												<span class="emo-surprised" title=".emo-surprised"></span>
+												<span class="emo-tongue" title=".emo-tongue"></span>
+												<span class="emo-unhappy" title=".emo-unhappy"></span>
+												<span class="emo-waii" title=".emo-waii"></span>
+												<span class="emo-wink" title=".emo-wink"></span>
+												<span class="emo-yell" title=".emo-yell"></span>
+											</p>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+								<!-- Data block -->
+								<article class="span8 data-block">
+									<div class="data-container">
+										<section>
+											<div class='fullcalendar'></div>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+							</div>
+							<!-- /Grid row -->
+							
+						</section>
+						<!-- /Page container -->
+						
+					</div>
+					<!-- /Main content -->
+					<!-- /Right (content) side -->
+					
+				</div>
+				<!-- /Container style -->
+				
+			</div>
+			<!-- /Main page container -->
+			
+			<!-- Push space for footer -->
+			<div id="push"></div>
+			
+		</div>
+		<!-- /Wrap all page content for sticky footer -->
+		
+		<!-- Main footer -->
+		<footer id="footer">
+			<ul>
+				<li>Built with love on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> by <a href="http://www.walkingpixels.com/">Walking Pixels</a>.</li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Documentation</a></li>
+				<li><a href="#">Support</a></li>
+			</ul>
+		</footer>
+		<!-- /Main footer -->
+
+		<!-- Scripts -->
+		<script src="js/navigation.js"></script>
+
+		<!-- Bootstrap scripts -->
+		<!--
+		<script src="js/bootstrap/bootstrap-tooltip.js"></script>
+		<script src="js/bootstrap/bootstrap-dropdown.js"></script>
+		<script src="js/bootstrap/bootstrap-button.js"></script>
+		<script src="js/bootstrap/bootstrap-alert.js"></script>
+		<script src="js/bootstrap/bootstrap-popover.js"></script>
+		<script src="js/bootstrap/bootstrap-collapse.js"></script>
+		<script src="js/bootstrap/bootstrap-transition.js"></script>
+		-->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- jQuery Flot Charts -->
+		<!--[if lte IE 8]>
+			<script language="javascript" type="text/javascript" src="js/plugins/flot/excanvas.min.js"></script>
+		<![endif]-->
+
+		<script src="js/plugins/flot/jquery.flot.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+			
+				// Demo #1
+				// we use an inline data source in the example, usually data would be fetched from a server
+				var data = [], totalPoints = 300;
+				function getRandomData() {
+					if (data.length > 0)
+						data = data.slice(1);
+				
+					// do a random walk
+					while (data.length < totalPoints) {
+						var prev = data.length > 0 ? data[data.length - 1] : 50;
+						var y = prev + Math.random() * 10 - 5;
+						if (y < 0)
+							y = 0;
+						if (y > 100)
+							y = 100;
+						data.push(y);
+					}
+				
+					// zip the generated y values with the x values
+					var res = [];
+					for (var i = 0; i < data.length; ++i)
+						res.push([i, data[i]])
+					return res;
+				}
+				
+				// setup control widget
+				var updateInterval = 80;
+				$("#updateInterval").val(updateInterval).change(function () {
+					var v = $(this).val();
+					if (v && !isNaN(+v)) {
+						updateInterval = +v;
+					if (updateInterval < 1)
+						updateInterval = 1;
+					if (updateInterval > 2000)
+						updateInterval = 2000;
+					$(this).val("" + updateInterval);
+					}
+				});
+				
+				// setup plot
+				var options = {
+					series: { color: '#389abe' }, // drawing is faster without shadows
+					yaxis: { min: 0, max: 100 },
+					xaxis: { show: false },
+					grid: { backgroundColor: 'transparent', color: '#b2b2b2', borderColor: '#e7e7e7', borderWidth: 1 }
+				};
+				var plot = $.plot($("#demo-1"), [ getRandomData() ], options);
+				
+				function update() {
+					plot.setData([ getRandomData() ]);
+					// since the axes don't change, we don't need to call plot.setupGrid()
+					plot.draw();
+					setTimeout(update, updateInterval);
+				}
+				
+				update();
+			
+			});
+		</script>
+		
+		<!-- Block TODO list -->
+		<script>
+			$(document).ready(function() {
+				
+				$('.todo-block input[type="checkbox"]').click(function(){
+					$(this).closest('tr').toggleClass('done');
+				});
+				$('.todo-block input[type="checkbox"]:checked').closest('tr').addClass('done');
+				
+			});
+		</script>
+		
+		<!-- jQuery FullCalendar -->
+		<script src="js/plugins/fullCalendar/jquery.fullcalendar.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+			
+				var date = new Date();
+				var d = date.getDate();
+				var m = date.getMonth();
+				var y = date.getFullYear();
+				
+				$('.fullcalendar').fullCalendar({
+					header: {
+						left: 'title',
+						center: '',
+						right: 'today month,basicWeek prev,next'
+					},
+					buttonText: {
+						prev: '<span class="icon-chevron-left"></span>',
+						next: '<span class="icon-chevron-right"></span>'
+					},
+					editable: true,
+					events: [
+						{
+							title: 'All Day Event',
+							start: new Date(y, m, 1)
+						},
+						{
+							title: 'Long Event',
+							start: new Date(y, m, d-5),
+							end: new Date(y, m, d-2),
+							className: 'event-red'
+						},
+						{
+							id: 999,
+							title: 'Repeating Event',
+							start: new Date(y, m, d-3, 16, 0),
+							allDay: false,
+							className: 'event-yellow'
+						},
+						{
+							id: 999,
+							title: 'Repeating Event',
+							start: new Date(y, m, d+4, 16, 0),
+							allDay: false,
+							className: 'event-green'
+						},
+						{
+							title: 'Meeting',
+							start: new Date(y, m, d, 10, 30),
+							allDay: false,
+							className: 'event-blue'
+						},
+						{
+							title: 'Lunch',
+							start: new Date(y, m, d, 12, 0),
+							end: new Date(y, m, d, 14, 0),
+							allDay: false,
+							className: 'event-red'
+						},
+						{
+							title: 'Birthday Party',
+							start: new Date(y, m, d+1, 19, 0),
+							end: new Date(y, m, d+1, 22, 30),
+							allDay: false,
+							className: 'event-green'
+						},
+						{
+							title: 'Walking Pixels website',
+							start: new Date(y, m, 28),
+							end: new Date(y, m, 29),
+							url: 'http://www.walkingpixels.com/',
+							className: 'event-black'
+						}
+					]
+				});
+				
+			});
+		</script>
+		
+		<!-- jQuery jGrowl -->
+		<script type="text/javascript" src="js/plugins/jGrowl/jquery.jgrowl.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+				$.jGrowl("Hello stranger!", { 
+					theme: 'lindworm',
+					life: 2500
+				});
+				
+				$.jGrowl("This notification will live a little longer. This is default style.", {
+					beforeClose: function() {
+						return false;
+					}
+				});
+				
+				$.jGrowl.defaults.closerTemplate = '<div>hide all notifications</div>';
+				
+			});
+			
+		</script>
+		
+		<!-- jQuery SparkLines -->
+		<script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+			
+				// Sample line chart
+				$('.sparkline.line').sparkline('html', {
+					height: '45px',
+					width: '90px',
+					lineColor: '#6CC84C',
+					fillColor: '#b1dfa1',
+					spotColor: '#3a87ad',
+					minSpotColor: false,
+					maxSpotColor: false,
+					spotRadius: 3
+				});
+				
+				// Sample bar chart
+				$('.sparkline.bar').sparkline([17, 23, 18, 14, 18, 19, 13], {
+					type: 'bar',
+					height: '45px',
+					barWidth: '8px',
+					barColor: '#3a87ad',
+					tooltipFormat: '{{offset:names}}: {{value}} orders',
+					tooltipValueLookups: {
+					names: {
+						0: 'Monday',
+						1: 'Tuesday',
+						2: 'Wednesday',
+						3: 'Thursday',
+						4: 'Friday',
+						5: 'Saturday',
+						6: 'Sunday'
+						}
+					}
+				});
+				
+			});
+		</script>
+
+		<!-- Page slide plugin -->
+		<script src="js/plugins/pageSlide/jquery.pageslide.min.js"></script>
+
+	</body>
+</html>

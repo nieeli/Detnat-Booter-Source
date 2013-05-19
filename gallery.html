@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>Gallery | Lindworm Responsive Admin Template</title>
+		<meta name="description" content="">
+		<meta name="author" content="Walking Pixels | www.walkingpixels.com">
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Style -->
+		<link rel="stylesheet" href="css/lindworm-green.css">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		
+		<!-- JS Libs -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/libs/jquery.js"><\/script>')</script>
+		<script src="js/libs/modernizr.js"></script>
+		<script src="js/libs/selectivizr.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				
+				// Sidebar slide
+				$('.nav-slide').pageslide();
+				$(window).resize(function() {
+					$.pageslide.close();
+				});
+
+				// Tooltips
+				$('.user-profile-actions li a').tooltip({
+					placement: 'bottom'
+				});
+				$('.thumbnail-actions [title]').tooltip({
+					placement: 'bottom'
+				});
+
+			});
+		</script>
+		
+	<body>
+		
+		<!-- Wrap all page content for sticky footer -->
+		<div id="wrapper">
+
+			<!-- Main page container -->
+			<div class="container">
+
+				<!-- Secondary navigation -->
+				<ul class="secondary-navigation">
+					<li><a href="#">Settings</a>
+					<li><a href="#">Logout</a>
+				</ul>
+				<!-- /Secondary navigation -->
+
+				<!-- Container style -->
+				<div class="container-inner">
+
+					<!-- Left (navigation) side -->
+					<!-- Sidebar -->
+					<div class="sidebar" id="nav">
+
+						<!-- Sample logo -->
+						<a href="index.html" class="brand" title="Back to homepage">Lindworm Responsive Twitter Bootstrap Admin Template</a> 
+						
+						<!-- User profile -->
+						<div class="user-profile">
+							<img alt="John Pixel avatar" src="http://placekitten.com/60/60">
+							<div>
+								<a href="#">John Pixel</a>
+								<em>marketing manager</em>
+								<ul class="user-profile-actions">
+									<li><a href="#" title="Open mailbox"><span class="icon-envelope"></span></a></li>
+									<li><a href="#" title="Personal settings"><span class="icon-cogs"></span></a></li>
+									<li><a href="#" title="Logout"><span class="icon-key"></span></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /User profile -->
+						
+						<!-- Main navigation -->
+						<nav class="main-navigation" role="navigation">
+							<ul>
+								<li>
+									<a href="index.html" class="no-submenu"><span class="icon-home"></span>Dashboard</a>
+								</li>
+								<li>
+									<a href="forms.html" class="no-submenu"><span class="icon-tasks"></span>Forms</a>
+								</li>
+								<li>
+									<a href="charts.html" class="no-submenu"><span class="icon-signal"></span>Charts</a>
+								</li>
+								<li>
+									<a href="tables.html" class="no-submenu"><span class="icon-list"></span>Tables</a>
+								</li>
+								<li class="active">
+									<a href="gallery.html"><span class="icon-picture"></span>Gallery</a>
+									<ul>
+										<li><a href="gallery.html">Car Gallery</a></li>
+										<li><a href="gallery.html">Food Gallery</a></li>
+										<li><a href="gallery.html">Art Gallery</a></li>
+										<li><a href="gallery.html">Animal Gallery</a></li>
+										<li><a href="gallery.html">Super long name to see how it collapse</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="file-explorer.html" class="no-submenu"><span class="icon-file"></span>File explorer</a>
+								</li>
+								<li>
+									<a href="calendar.html" class="no-submenu"><span class="icon-calendar"></span>Calendar</a>
+								</li>
+								<li>
+									<a href="ui-buttons.html" class="no-submenu"><span class="icon-website"></span>UI &amp; Buttons</a>
+								</li>
+								<li>
+									<a href="typo.html" class="no-submenu"><span class="icon-font"></span>Typography</a>
+								</li>
+								<li>
+									<a href="grid.html" class="no-submenu"><span class="icon-th"></span>Grid</a>
+								</li>
+								<li>
+									<a href="goodies.html"><span class="icon-gift"></span>Goodies</a>
+									<ul>
+										<li><a href="goodies.html">Goodies</a></li>
+										<li><a href="401.html">Error 401</a></li>
+										<li><a href="403.html">Error 403</a></li>
+										<li><a href="404.html">Error 404</a></li>
+										<li><a href="500.html">Error 500</a></li>
+										<li><a href="503.html">Error 503</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+						<!-- /Main navigation -->
+						
+						<!-- Sidebar note -->
+						<div class="sidebar-note">
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+							<a href="#" class="btn btn-danger btn-flat">Details &rarr;</a>
+						</div>
+						<!-- /Sidebar note -->
+
+					</div>
+					<!-- /Sidebar -->
+					<!-- /Left (navigation) side -->
+
+					<!-- Right (content) side -->
+					<!-- Main content -->
+					<div class="content">
+				
+						<!-- Page container -->
+						<section class="page-container" role="main">
+
+							<!-- Nav slide button -->
+							<a class="nav-slide" href="#nav">
+								<span class="icon-align-justify"></span>
+							</a>
+
+							<!-- Breadcrumbs -->
+							<ul class="breadcrumb">
+								<li><a href="#"><span class="icon-home"></span> Home</a> <span class="icon-chevron-right"></span></li>
+								<li><a href="#">Lindworm Bootstrap Template</a> <span class="icon-chevron-right"></span></li>
+								<li class="active">Gallery</li>
+							</ul>
+							<!-- Breadcrumbs -->
+							
+							<!-- Grid row -->
+							<div class="row-fluid">
+							
+								<!-- Data block -->
+								<article class="span12 data-block">
+									<div class="data-container">
+										<header>
+											<h2>Image Gallery</h2>
+										</header>
+										<section>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum tortor sed lectus dignissim nec ornare augue tincidunt. In adipiscing vulputate orci, ut aliquam nisi condimentum vitae. Nunc suscipit enim id diam venenatis mattis. Vestibulum id leo augue.</p>
+											<ul class="thumbnails">
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+											</ul>
+											<ul class="thumbnails">
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+											</ul>
+											<ul class="thumbnails">
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+											</ul>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+							</div>
+							<!-- /Grid row -->
+							
+							<!-- Grid row -->
+							<div class="row-fluid">
+
+								<article class="span12 data-block data-block-alt">
+									<div class="data-container">
+										<section>
+											<h2>Endless combinations</h2>
+											<p>If you want only clean images for gallery, use class <code>.raw</code> on your thumbnails container.</p>
+											<p>Duis eu porta ligula. In tempor, ipsum vitae semper adipiscing, nisi eros feugiat massa, in tristique elit ipsum dapibus tellus. Nullam nisi tellus, aliquam quis vestibulum et, interdum eget leo. Maecenas quam turpis, luctus vel imperdiet ac, tempus id erat. Nullam nec diam erat. Fusce cursus arcu ac magna lobortis bibendum. Nunc eu elementum quam.</p>
+											<ul class="thumbnails raw">
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+												<li class="span2"><a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a></li>
+											</ul>
+										</section>
+									</div>
+								</article>
+
+							</div>
+							<!-- /Grid row -->
+
+							<!-- Grid row -->
+							<div class="row-fluid">
+							
+								<!-- Data block  -->
+								<article class="span12 data-block">
+									<div class="data-container">
+										<header>
+											<h2>Image Gallery with thumbnail actions</h2>
+										</header>
+										<section>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum tortor sed lectus dignissim nec ornare augue tincidunt. In adipiscing vulputate orci, ut aliquam nisi condimentum vitae. Nunc suscipit enim id diam venenatis mattis. Vestibulum id leo augue.</p>
+											<ul class="thumbnails">
+												<li class="span2">
+													<ul class="thumbnail-actions">
+														<li><a href="#" title="Edit photo"><span class="icon-edit"></span></a></li>
+														<li><a href="#" title="Delete photo"><span class="icon-trash"></span></a></li>
+														<li><a href="#" title="Download photo"><span class="icon-download-alt"></span></a></li>
+													</ul>
+													<a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a>
+												</li>
+												<li class="span2">
+													<ul class="thumbnail-actions">
+														<li><a href="#" title="Edit photo"><span class="icon-edit"></span></a></li>
+														<li><a href="#" title="Delete photo"><span class="icon-trash"></span></a></li>
+														<li><a href="#" title="Download photo"><span class="icon-download-alt"></span></a></li>
+													</ul>
+													<a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a>
+												</li>
+												<li class="span2">
+													<ul class="thumbnail-actions">
+														<li><a href="#" title="Edit photo"><span class="icon-edit"></span></a></li>
+														<li><a href="#" title="Delete photo"><span class="icon-trash"></span></a></li>
+														<li><a href="#" title="Download photo"><span class="icon-download-alt"></span></a></li>
+													</ul>
+													<a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a>
+												</li>
+												<li class="span2">
+													<ul class="thumbnail-actions">
+														<li><a href="#" title="Edit photo"><span class="icon-edit"></span></a></li>
+														<li><a href="#" title="Delete photo"><span class="icon-trash"></span></a></li>
+														<li><a href="#" title="Download photo"><span class="icon-download-alt"></span></a></li>
+													</ul>
+													<a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a>
+												</li>
+												<li class="span2">
+													<ul class="thumbnail-actions">
+														<li><a href="#" title="Edit photo"><span class="icon-edit"></span></a></li>
+														<li><a href="#" title="Delete photo"><span class="icon-trash"></span></a></li>
+														<li><a href="#" title="Download photo"><span class="icon-download-alt"></span></a></li>
+													</ul>
+													<a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a>
+												</li>
+												<li class="span2">
+													<ul class="thumbnail-actions">
+														<li><a href="#" title="Edit photo"><span class="icon-edit"></span></a></li>
+														<li><a href="#" title="Delete photo"><span class="icon-trash"></span></a></li>
+														<li><a href="#" title="Download photo"><span class="icon-download-alt"></span></a></li>
+													</ul>
+													<a class="thumbnail" href="#"><img alt="" src="img/sample_content/sample-image.png"></a>
+												</li>
+											</ul>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block  -->
+								
+							</div>
+							<!-- /Grid row -->
+							
+							<!-- Grid row -->
+							<div class="row-fluid">
+							
+								<!-- Data block  -->
+								<article class="span12 data-block">
+									<div class="data-container">
+										<section>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum tortor sed lectus dignissim nec ornare augue tincidunt. In adipiscing vulputate orci, ut aliquam nisi condimentum vitae. Nunc suscipit enim id diam venenatis mattis. Vestibulum id leo augue.</p>
+											<form class="form-gallery">
+												<ul class="thumbnails">
+													<li class="span3">
+														<input id="img2" type="checkbox" value="option" checked>
+														<a class="thumbnail" href="#"><img alt="Image 2" src="img/sample_content/sample-image.png"></a>
+													</li>
+													<li class="span3">
+														<input id="img3" type="checkbox" value="option">
+														<a class="thumbnail" href="#"><img alt="Image 3" src="img/sample_content/sample-image.png"></a>
+													</li>
+													<li class="span3">
+														<input id="img4" type="checkbox" value="option">
+														<a class="thumbnail" href="#"><img alt="Image 4" src="img/sample_content/sample-image.png"></a>
+													</li>
+													<li class="span3">
+														<input id="img5" type="checkbox" value="option">
+														<a class="thumbnail" href="#"><img alt="Image 5" src="img/sample_content/sample-image.png"></a>
+													</li>
+												</ul>
+												<ul class="thumbnails">
+													<li class="span3">
+														<input id="img6" type="checkbox" value="option">
+														<a class="thumbnail" href="#"><img alt="Image 6" src="img/sample_content/sample-image.png"></a>
+													</li>
+													<li class="span3">
+														<input id="img7" type="checkbox" value="option">
+														<a class="thumbnail" href="#"><img alt="Image 7" src="img/sample_content/sample-image.png"></a>
+													</li>
+													<li class="span3">
+														<input id="img8" type="checkbox" value="option">
+														<a class="thumbnail" href="#"><img alt="Image 8" src="img/sample_content/sample-image.png"></a>
+													</li>
+													<li class="span3">
+														<input id="img9" type="checkbox" value="option">
+														<a class="thumbnail" href="#"><img alt="Image 9" src="img/sample_content/sample-image.png"></a>
+													</li>
+												</ul>
+												<div class="form-actions">
+													<select id="actions" class="span2">
+														<option>edit</option>
+														<option>remove</option>
+														<option>archive</option>
+														<option>report</option>
+													</select>
+													<button class="btn btn-alt btn-primary" type="submit">Selected items</button>
+												</div>
+											</form>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block  -->
+								
+							</div>
+							<!-- /Grid row -->
+
+						</section>
+						<!-- /Page container -->
+
+					</div>
+					<!-- /Main content -->
+					<!-- /Right (content) side -->
+
+				</div>
+				<!-- /Container style -->
+
+			</div>
+			<!-- /Main page container -->
+
+			<!-- Push space for footer -->
+			<div id="push"></div>
+			
+		</div>
+		<!-- /Wrap all page content for sticky footer -->
+		
+		<!-- Main footer -->
+		<footer id="footer">
+			<ul>
+				<li>Built with love on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> by <a href="http://www.walkingpixels.com/">Walking Pixels</a>.</li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Documentation</a></li>
+				<li><a href="#">Support</a></li>
+			</ul>
+		</footer>
+		<!-- /Main footer -->
+
+		<!-- Scripts -->
+		<script src="js/navigation.js"></script>
+
+		<!-- Bootstrap scripts -->
+		<!--
+		<script src="js/bootstrap/bootstrap-tooltip.js"></script>
+		<script src="js/bootstrap/bootstrap-dropdown.js"></script>
+		<script src="js/bootstrap/bootstrap-tab.js"></script>
+		<script src="js/bootstrap/bootstrap-button.js"></script>
+		<script src="js/bootstrap/bootstrap-alert.js"></script>
+		<script src="js/bootstrap/bootstrap-popover.js"></script>
+		<script src="js/bootstrap/bootstrap-collapse.js"></script>
+		<script src="js/bootstrap/bootstrap-transition.js"></script>
+		-->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+		
+		<!-- Highlight gallery item when clicked -->
+		<script>
+			$(document).ready(function() {
+					
+				$('.form-gallery input[type="checkbox"]').click(function() {
+					$(this).next('a').toggleClass('active');
+				});
+				$('.form-gallery input[type="checkbox"]:checked').next('a').addClass('active');
+				
+			});
+		</script>
+
+		<!-- Page slide plugin -->
+		<script src="js/plugins/pageSlide/jquery.pageslide.min.js"></script>
+		
+	</body>
+</html>

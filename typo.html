@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>Typography | Lindworm Responsive Admin Template</title>
+		<meta name="description" content="">
+		<meta name="author" content="Walking Pixels | www.walkingpixels.com">
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Style -->
+		<link rel="stylesheet" href="css/lindworm-green.css">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		
+		<!-- JS Libs -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/libs/jquery.js"><\/script>')</script>
+		<script src="js/libs/modernizr.js"></script>
+		<script src="js/libs/selectivizr.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				
+				// Sidebar slide
+				$('.nav-slide').pageslide();
+				$(window).resize(function() {
+					$.pageslide.close();
+				});
+
+				// Tooltips
+				$('.user-profile-actions li a').tooltip({
+					placement: 'bottom'
+				});
+				$('p [title]').tooltip({
+					placement: 'top'
+				});
+				
+			});
+		</script>
+		
+	<body>
+		
+		<!-- Wrap all page content for sticky footer -->
+		<div id="wrapper">
+
+			<!-- Main page container -->
+			<div class="container">
+
+				<!-- Secondary navigation -->
+				<ul class="secondary-navigation">
+					<li><a href="#">Settings</a>
+					<li><a href="#">Logout</a>
+				</ul>
+				<!-- /Secondary navigation -->
+
+				<!-- Container style -->
+				<div class="container-inner">
+
+					<!-- Left (navigation) side -->
+					<!-- Sidebar -->
+					<div class="sidebar" id="nav">
+
+						<!-- Sample logo -->
+						<a href="index.html" class="brand" title="Back to homepage">Lindworm Responsive Twitter Bootstrap Admin Template</a> 
+						
+						<!-- User profile -->
+						<div class="user-profile">
+							<img alt="John Pixel avatar" src="http://placekitten.com/60/60">
+							<div>
+								<a href="#">John Pixel</a>
+								<em>marketing manager</em>
+								<ul class="user-profile-actions">
+									<li><a href="#" title="Open mailbox"><span class="icon-envelope"></span></a></li>
+									<li><a href="#" title="Personal settings"><span class="icon-cogs"></span></a></li>
+									<li><a href="#" title="Logout"><span class="icon-key"></span></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /User profile -->
+						
+						<!-- Main navigation -->
+						<nav class="main-navigation" role="navigation">
+							<ul>
+								<li>
+									<a href="index.html" class="no-submenu"><span class="icon-home"></span>Dashboard</a>
+								</li>
+								<li>
+									<a href="forms.html" class="no-submenu"><span class="icon-tasks"></span>Forms</a>
+								</li>
+								<li>
+									<a href="charts.html" class="no-submenu"><span class="icon-signal"></span>Charts</a>
+								</li>
+								<li>
+									<a href="tables.html" class="no-submenu"><span class="icon-list"></span>Tables</a>
+								</li>
+								<li>
+									<a href="gallery.html"><span class="icon-picture"></span>Gallery</a>
+									<ul>
+										<li><a href="gallery.html">Car Gallery</a></li>
+										<li><a href="gallery.html">Food Gallery</a></li>
+										<li><a href="gallery.html">Art Gallery</a></li>
+										<li><a href="gallery.html">Animal Gallery</a></li>
+										<li><a href="gallery.html">Super long name to see how it collapse</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="file-explorer.html" class="no-submenu"><span class="icon-file"></span>File explorer</a>
+								</li>
+								<li>
+									<a href="calendar.html" class="no-submenu"><span class="icon-calendar"></span>Calendar</a>
+								</li>
+								<li>
+									<a href="ui-buttons.html" class="no-submenu"><span class="icon-website"></span>UI &amp; Buttons</a>
+								</li>
+								<li class="active">
+									<a href="typo.html" class="no-submenu"><span class="icon-font"></span>Typography</a>
+								</li>
+								<li>
+									<a href="grid.html" class="no-submenu"><span class="icon-th"></span>Grid</a>
+								</li>
+								<li>
+									<a href="goodies.html"><span class="icon-gift"></span>Goodies</a>
+									<ul>
+										<li><a href="goodies.html">Goodies</a></li>
+										<li><a href="401.html">Error 401</a></li>
+										<li><a href="403.html">Error 403</a></li>
+										<li><a href="404.html">Error 404</a></li>
+										<li><a href="500.html">Error 500</a></li>
+										<li><a href="503.html">Error 503</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+						<!-- /Main navigation -->
+						
+						<!-- Sidebar note -->
+						<div class="sidebar-note">
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+							<a href="#" class="btn btn-danger btn-flat">Details &rarr;</a>
+						</div>
+						<!-- /Sidebar note -->
+
+					</div>
+					<!-- /Sidebar -->
+					<!-- /Left (navigation) side -->
+
+					<!-- Right (content) side -->
+					<!-- Main content -->
+					<div class="content">
+
+						<!-- Page header -->
+						<header class="page-header">
+
+							<!-- Slide btn for sidebar navigation -->
+							<a class="nav-slide" href="#nav">
+								<span class="icon-align-justify"></span>
+							</a>
+
+							<h1>Typography</h1>
+							<p>Great attention has been paid to the typography elements. This preview page will show you basic elements and popular user interface components available. Many styles are combinable, so don't be affraid to experiment. Modifying is super easy, you can edit final CSS or, if you are familiar with LESS, typographic components are controled with few LESS variables.</p>
+						</header>
+						<!-- /Page header -->
+				
+						<!-- Page container -->
+						<section class="page-container" role="main">
+
+							<!-- Breadcrumbs -->
+							<ul class="breadcrumb">
+								<li><a href="#"><span class="icon-home"></span> Home</a> <span class="icon-chevron-right"></span></li>
+								<li><a href="#">Lindworm Bootstrap Template</a> <span class="icon-chevron-right"></span></li>
+								<li class="active">Typography</li>
+							</ul>
+							<!-- Breadcrumbs -->
+							
+							<!-- Grid row -->
+							<div class="row-fluid">
+								
+								<!-- Example body text -->
+								<!-- Data block -->
+								<article class="span8 data-block">
+									<div class="data-container">
+										<header>
+											<h2>Example block text</h2>
+										</header>
+										<section>
+											<p>Nullam quis risus <strong>eget urna mollis</strong> ornare vel eu leo. <em>Cum sociisnatoque penatibus</em>  et magnis dis parturient montes, <code>code</code> nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Sed euismod aliquet sapien consequat tincidunt.</p>
+											<p>Vivamus sagittis lacus vel augue laoreet <abbr title="Sample abbreviation">rutrum faucibus dolor auctor</abbr>. Duis mollis, est <strike>non commodo luctus</strike>, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Sed euismod aliquet sapien consequat tincidunt.</p>
+										</section>
+										<footer>
+											<p>Lindworm is packed with variety of typography elements for easy and rapid web app development.</p>
+										</footer>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+								<!-- Headings -->
+								<!-- Data block -->
+								<article class="span4 data-block">
+									<div class="data-container">
+										<header>
+											<h2>Headings</h2>
+										</header>
+										<section>
+											<h1>h1. Heading 1</h1>
+											<h2>h2. Heading 2</h2>
+											<h3>h3. Heading 3</h3>
+											<h4>h4. Heading 4</h4>
+											<h5>h5. Heading 5</h5>
+											<h6>h6. Heading 6</h6>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+							</div>
+							<!-- /Grid row -->
+							
+							<!-- Grid row -->
+							<div class="row-fluid">
+							
+								<!-- Unstyled list -->
+								<!-- Data block -->
+								<article class="span4 data-block data-block-alt highlight">
+									<div class="data-container">
+										<header>
+											<h2>Unstyled list</h2>
+										</header>
+										<section>
+											<ul class="unstyled">
+												<li>Lorem ipsum dolor sit</li>
+												<li>Consectetur adipiscing</li>
+												<li>Integer molestie lorem at</li>
+												<li>Facilisis in pretium nisl</li>
+												<li>Nulla volutpat
+													<ul>
+														<li>Phasellus iaculis</li>
+														<li>Purus sodales</li>
+														<li>Vestibulum laoreet</li>
+														<li>Ac tristique</li>
+													</ul>
+												</li>
+												<li>Faucibus porta lacus fringilla</li>
+												<li>Aenean sit amet erat nunc</li>
+												<li>Eget porttitor lorem</li>
+											</ul>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+								<!-- Unordered list -->
+								<!-- Data block -->
+								<article class="span4 data-block data-block-alt">
+									<div class="data-container">
+										<header>
+											<h2>Unordered list</h2>
+										</header>
+										<section>
+											<ul>
+												<li>Lorem ipsum dolor sit</li>
+												<li>Consectetur adipiscing</li>
+												<li>Integer molestie lorem at</li>
+												<li>Facilisis in pretium nisl</li>
+												<li>Nulla volutpat aliquam
+													<ul>
+														<li>Phasellus iaculis</li>
+														<li>Purus sodales</li>
+														<li>Vestibulum laoreet</li>
+														<li>Ac tristique libero at</li>
+													</ul>
+												</li>
+												<li>Faucibus porta lacus vel</li>
+												<li>Aenean sit amet nunc</li>
+												<li>Eget porttitor lorem</li>
+											</ul>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+								<!-- Ordered list -->
+								<!-- Data block -->
+								<article class="span4 data-block data-block-alt">
+									<div class="data-container">
+										<header>
+											<h2>Ordered list</h2>
+										</header>
+										<section>
+											<ol>
+												<li>Lorem ipsum dolor sit</li>
+												<li>Consectetur adipiscing</li>
+												<li>Integer molestie lorem at</li>
+												<li>Facilisis in pretium nisl</li>
+												<li>Nulla volutpat aliquam
+													<ul>
+														<li>Phasellus iaculis</li>
+														<li>Purus sodales</li>
+														<li>Vestibulum laoreet</li>
+														<li>Ac tristique libero</li>
+													</ul>
+												</li>
+												<li>Faucibus porta lacus vel</li>
+												<li>Aenean sit amet erat nunc</li>
+												<li>Eget porttitor lorem</li>
+											</ol>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+							</div>
+							<!-- /Grid row -->
+							
+							<!-- Grid row -->
+							<div class="row-fluid">
+								
+								<!-- Checkmark list -->
+								<!-- Data block -->
+								<article class="span4 data-block data-block-alt">
+									<div class="data-container">
+										<section>
+											<ul class="unstyled">
+												<li><span class="icon-ok"></span> Lorem ipsum dolor sit</li>
+												<li><span class="icon-ok"></span> Consectetur adipiscing</li>
+												<li><span class="icon-ok"></span> Integer molestie lorem at</li>
+											</ul>
+											<ul class="unstyled">
+												<li><span class="icon-ok-sign"></span> Facilisis in pretium nisl</li>
+												<li><span class="icon-ok-sign"></span> Nulla volutpat aliquam</li>
+												<li><span class="icon-ok-sign"></span> Phasellus iaculis neque</li>
+											</ul>
+											<ul class="unstyled">
+												<li><span class="fam-tick"></span> Purus sodales ultricies</li>
+												<li><span class="fam-tick"></span> Vestibulum laoreet sem</li>
+												<li><span class="fam-tick"></span> Ac tristique libero at</li>
+											</ul>
+											<ul class="unstyled">
+												<li><span class="fam-cross"></span> Faucibus porta lacus vel</li>
+												<li><span class="fam-cross"></span> Aenean sit amet erat</li>
+												<li><span class="fam-cross"></span> Eget porttitor lorem</li>
+											</ul>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+								<!-- Crossmark list -->
+								<!-- Data block -->
+								<article class="span4 data-block data-block-alt highlight highlight-red">
+									<div class="data-container">
+										<section>
+											<ul class="unstyled">
+												<li><span class="icon-remove-sign"></span> Lorem ipsum dolor sit</li>
+												<li><span class="icon-remove-sign"></span> Consectetur adipiscing</li>
+												<li><span class="icon-remove-sign"></span> Integer molestie lorem</li>
+											</ul>
+											<ul class="unstyled">
+												<li><span class="fam-add"></span> Facilisis in pretium nisl</li>
+												<li><span class="fam-add"></span> Nulla volutpat aliquam</li>
+												<li><span class="fam-add"></span> Phasellus iaculis neque</li>
+											</ul>
+											<ul class="unstyled">
+												<li><span class="fam-delete"></span> Purus sodales ultricies</li>
+												<li><span class="fam-delete"></span> Vestibulum laoreet sem</li>
+												<li><span class="fam-delete"></span> Ac tristique libero at</li>
+											</ul>
+											<ul class="unstyled">
+												<li><span class="fam-information"></span> Faucibus porta lacus vel</li>
+												<li><span class="fam-information"></span> Aenean sit amet erat</li>
+												<li><span class="fam-information"></span> Eget porttitor lorem</li>
+											</ul>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+								<!-- Pointmark list -->
+								<!-- Data block -->
+								<article class="span4 data-block data-block-alt">
+									<div class="data-container">
+										<section>
+											<ul class="unstyled">
+												<li><span class="icon-arrow-right"></span> Lorem ipsum dolor sit</li>
+												<li><span class="icon-arrow-right"></span> Consectetur adipiscing</li>
+												<li><span class="icon-arrow-right"></span> Integer molestie lorem at</li>
+											</ul>
+											<ul class="unstyled">
+												<li><span class="fam-bullet-go"></span> Facilisis in pretium nisl</li>
+												<li><span class="fam-bullet-go"></span> Nulla volutpat aliquam</li>
+												<li><span class="fam-bullet-go"></span> Phasellus iaculis neque</li>
+											</ul>
+											<ul class="unstyled">
+												<li><span class="icon-play"></span> Purus sodales ultricies</li>
+												<li><span class="icon-play"></span> Vestibulum laoreet sem</li>
+												<li><span class="icon-play"></span> Ac tristique libero at</li>
+											</ul>
+											<ul class="unstyled">
+												<li><span class="icon-chevron-right"></span> Faucibus porta lacus vel</li>
+												<li><span class="icon-chevron-right"></span> Aenean sit amet erat nunc</li>
+												<li><span class="icon-chevron-right"></span> Eget porttitor lorem</li>
+											</ul>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+							</div>
+							<!-- /Grid row -->
+							
+							<!-- Hero unit -->
+							<div class="hero-unit">
+								<h1>Showcase heading</h1>
+								<p>When you really need to draw the attention. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis metus sit amet lorem viverra suscipit. Integer lobortis, sem vitae bibendum vulputate, neque orci vestibulum quam, vel volutpat nibh felis ac ante.</p>
+								<p><a class="btn btn-alt btn-primary btn-large">Learn more</a></p>
+							</div>
+							<!-- /Hero unit -->
+							
+							<!-- Grid row -->
+							<div class="row-fluid">
+							
+								<!-- Default description list -->
+								<!-- Data block -->
+								<article class="span6 data-block data-block-alt">
+									<div class="data-container">
+										<header>
+											<h2>Default description list</h2>
+										</header>
+										<section>
+											<dl>
+												<dt>Gravida</dt>
+												<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+												<dt>Etiam</dt>
+												<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+												<dd>Donec id elit non mi porta gravida at eget metus.</dd>
+												<dt>Malesuada</dt>
+												<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+											</dl>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+								<!-- Horizontal description list -->
+								<!-- Data block -->
+								<article class="span6 data-block data-block-alt">
+									<div class="data-container">
+										<header>
+											<h2>Horizontal description list</h2>
+										</header>
+										<section>
+											<dl class="dl-horizontal">
+												<dt>Gravida</dt>
+												<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+												<dt>Etiam</dt>
+												<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+												<dd>Donec id elit non mi porta gravida at eget metus.</dd>
+												<dt>Malesuada</dt>
+												<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+												<dd>Suspendisse placerat ornare mauris quis semper.</dd>
+											</dl>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+							</div>
+							<!-- /Grid row -->
+							
+							<!-- Grid row -->
+							<div class="row-fluid">
+								
+								<!-- Left blockquotes -->
+								<!-- Data block -->
+								<article class="span6 data-block data-block-alt highlight highlight-green">
+									<div class="data-container">
+										<header>
+											<h2>Blockquotes aligned to left</h2>
+										</header>
+										<section>
+											<blockquote>
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.</p>
+												<small><strong>Author name</strong> in <cite title="">Book name</cite></small>
+											</blockquote>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+								<!-- Right blockquotes -->
+								<!-- Data block -->
+								<article class="span6 data-block data-block-alt">
+									<div class="data-container clearfix">
+										<header>
+											<h2>Blockquotes aligned to right</h2>
+										</header>
+										<section>
+											<blockquote class="pull-right">
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.</p>
+												<small><strong>Author name</strong> in <cite title="">Book name</cite></small>
+											</blockquote>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+							</div>
+							<!-- /Grid row -->
+							
+							<!-- Grid row -->
+							<div class="row-fluid">
+							
+								<!-- Wells -->
+								<!-- Data block -->
+								<article class="span4 data-block data-block-alt">
+									<div class="data-container">
+										<header>
+											<h2><span class="icon-tint"></span> Wells</h2>
+										</header>
+										<section>
+											<div class="well">
+												<strong>Standard well</strong>
+												<p>Etiam porta sem malesuada magna mollis euismod.</p>
+											</div>
+											<div class="well large">
+												<strong>Large well</strong>
+												<p>Etiam porta sem malesuada magna mollis euismod.</p>
+											</div>
+											<div class="well small">
+												<strong>Small well</strong>
+												<p>Etiam porta sem malesuada magna mollis euismod.</p>
+											</div>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+								<!-- Tags -->
+								<!-- Data block -->
+								<article class="span4 data-block data-block-alt">
+									<div class="data-container">
+										<header>
+											<h2><span class="icon-tags"></span> Tags</h2>
+										</header>
+										<section>
+											<p>Default tags are static and comes in 6 color variants.</p>
+											<ul class="unstyled">
+												<li><span class="label">Default</span> Lorem ipsum dolor</li>
+												<li><span class="label label-success">Success</span> Etiam quis metus</li>
+												<li><span class="label label-warning">Warning</span> Aliquam erat volutpat</li>
+												<li><span class="label label-important">Important</span> Fusce felis tortor</li>
+												<li><span class="label label-info">Info</span> Vivamus eu diam eget mauris</li>
+												<li><span class="label label-inverse">Inverse</span> Proin nec diam in ante</li>
+											</ul>
+											<p>You can assign <code>label</code> class to any element.</p>
+											<ul class="unstyled">
+												<li><a href="#" class="label">Default</a> Lorem ipsum dolor</li>
+												<li><a href="#" class="label label-success">Success</a> Etiam quis metus</li>
+												<li><a href="#" class="label label-warning">Warning</a> Aliquam erat volutpat</li>
+												<li><a href="#" class="label label-important">Important</a> Fusce felis tortor</li>
+												<li><a href="#" class="label label-info">Info</a> Vivamus eu diam eget mauris</li>
+												<li><a href="#" class="label label-inverse">Inverse</a> Proin nec diam in ante</li>
+											</ul>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+								<!-- Code -->
+								<!-- Data block -->
+								<article class="span4 data-block data-block-alt highlight highlight-yellow">
+									<div class="data-container">
+										<header>
+											<h2><span class="icon-wrench"></span> Code</h2>
+										</header>
+										<section>
+											<p>Inline and block code snippets for easy to read code previews.</p>
+											<p><code>&lt;p&gt;Sample code here...&lt;/p&gt;</code></p>
+											<pre>&lt;p&gt;Sample code here...&lt;/p&gt;</pre>
+											<p>You may optionally add the <code>scrollable</code> class which will set a max-height of 350px and provide a y-axis scrollbar.</p>
+										</section>
+									</div>
+								</article>
+								<!-- /Data block -->
+								
+							</div>
+							<!-- /Grid row -->
+
+						</section>
+						<!-- /Page container -->
+
+					</div>
+					<!-- /Main content -->
+					<!-- /Right (content) side -->
+
+				</div>
+				<!-- /Container style -->
+
+			</div>
+			<!-- /Main page container -->
+
+			<!-- Push space for footer -->
+			<div id="push"></div>
+			
+		</div>
+		<!-- /Wrap all page content for sticky footer -->
+		
+		<!-- Main footer -->
+		<footer id="footer">
+			<ul>
+				<li>Built with love on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> by <a href="http://www.walkingpixels.com/">Walking Pixels</a>.</li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Documentation</a></li>
+				<li><a href="#">Support</a></li>
+			</ul>
+		</footer>
+		<!-- /Main footer -->
+
+		<!-- Scripts -->
+		<script src="js/navigation.js"></script>
+
+		<!-- Bootstrap scripts -->
+		<!--
+		<script src="js/bootstrap/bootstrap-tooltip.js"></script>
+		<script src="js/bootstrap/bootstrap-dropdown.js"></script>
+		<script src="js/bootstrap/bootstrap-tab.js"></script>
+		<script src="js/bootstrap/bootstrap-button.js"></script>
+		<script src="js/bootstrap/bootstrap-alert.js"></script>
+		<script src="js/bootstrap/bootstrap-popover.js"></script>
+		<script src="js/bootstrap/bootstrap-collapse.js"></script>
+		<script src="js/bootstrap/bootstrap-transition.js"></script>
+		-->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- Page slide plugin -->
+		<script src="js/plugins/pageSlide/jquery.pageslide.min.js"></script>
+		
+	</body>
+</html>
