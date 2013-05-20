@@ -156,7 +156,7 @@ if (!($user -> notBanned($odb)))
 		<form action="" class="form" method="POST">
             <fieldset>
                 <div class="widget">
-                    <div class="title"><img src="images/icons/dark/list.png" alt="" class="titleIcon" /><h6>IP Log</h6></div>
+                    <div class="title"><h6>IP Logger</h6></div>
                     <div class="formRow">
                         <label>Your Link</label>
                         <div class="formRight"><input type="text" value="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/funny.php?id='.$_SESSION['ID'];?>"/></div>
@@ -170,7 +170,7 @@ if (!($user -> notBanned($odb)))
             </fieldset>
         </form> 
 		<div class="widget">
-          <div class="title"><img src="images/icons/dark/frames.png" alt="" class="titleIcon" /><h6>Logs</h6></div>
+          <div class="title"><h6>Logs</h6></div>
             <table cellpadding="0" cellspacing="0" width="100%" class="sTable">
                 <thead>
                     <tr>
