@@ -24,7 +24,7 @@ if (!($user -> notBanned($odb)))
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
-		<title><?php echo $title_prefix; ?>Hub</title>
+		<title><?php echo $title_prefix; ?>IP-Logger</title>
 		<meta name="description" content="">
 		<meta name="author" content="Walking Pixels | www.walkingpixels.com">
 		<meta name="robots" content="index, follow">
@@ -110,8 +110,8 @@ if (!($user -> notBanned($odb)))
 							
 							<!-- Breadcrumbs -->
 							<ul class="breadcrumb">
-								<li><a href="#"><span class="icon-home"></span> Home</a> <span class="icon-chevron-right"></span></li>
-								<li class="active">Hub</li>
+								<li><a href="#"><span class="icon-home"></span>Home</a> <span class="icon-chevron-right"></span></li>
+								<li class="active">IP-Logger</li>
 							</ul>
 							<!-- Breadcrumbs -->
 						
@@ -123,9 +123,9 @@ if (!($user -> notBanned($odb)))
 								<article class="span12 data-block tabbed-block highlight highlight-red">
 									<div class="data-container">
 										<header>
-											<h2>HUB</h2>
+											<h2>IP-Logger</h2>
 											<ul class="data-header-actions tabs">
-												<li class="demoTabs active"><a href="#horizontal">Detnat HUB</a></li>
+												<li class="demoTabs active"><a href="#horizontal">Detnat IP-Logger</a></li>
 											</ul>
 										</header>
 
@@ -144,7 +144,7 @@ if (!($user -> notBanned($odb)))
 															<section>
 																<form class="form-horizontal">
 																	<fieldset>
-																		<legend>Ip Logger</legend>
+																		<legend>IP-Logger</legend>
 																		<?php 
 		if (isset($_POST['clearBtn']))
 		{
