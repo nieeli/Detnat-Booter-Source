@@ -18,24 +18,26 @@ if (!($user -> notBanned($odb)))
 	die();
 }
 ?>
-
 <!DOCTYPE html>
 <!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
-		<title><?php echo $bootername; ?>Dashboard</title>
+		<title><?php echo $title_prefix; ?>Hub</title>
 		<meta name="description" content="">
 		<meta name="author" content="Walking Pixels | www.walkingpixels.com">
 		<meta name="robots" content="index, follow">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- jQuery FullCalendar Styles -->
-		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.fullcalendar.css'>
+		<!-- jQuery TagsInput Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.tagsinput.css'>
 		
-		<!-- jQuery jGrowl Styles -->
-		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.jgrowl.css'>
+		<!-- jQuery jWYSIWYG Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.jwysiwyg.css'>
+		
+		<!-- Bootstrap wysihtml5 Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/bootstrap-wysihtml5.css'>
 
 		<!-- Style -->
 		<link rel="stylesheet" href="css/lindworm-blue.css">
@@ -48,9 +50,15 @@ if (!($user -> notBanned($odb)))
 		<script>window.jQuery || document.write('<script src="js/libs/jquery.js"><\/script>')</script>
 		<script src="js/libs/modernizr.js"></script>
 		<script src="js/libs/selectivizr.js"></script>
-
+		
 		<script>
-			$(document).ready(function() {
+			$(document).ready(function(){
+				
+				// Tabs
+				$('.demoTabs a').click(function (e) {
+					e.preventDefault();
+					$(this).tab('show');
+				})
 
 				// Sidebar slide
 				$('.nav-slide').pageslide();
@@ -67,215 +75,164 @@ if (!($user -> notBanned($odb)))
 		</script>
 		
 	<body>
-	
+		
 		<!-- Wrap all page content for sticky footer -->
 		<div id="wrapper">
-			
+
 			<!-- Main page container -->
 			<div class="container">
-	
+
 				<!-- Secondary navigation -->
 				<ul class="secondary-navigation">
 					<li><a href="#">Settings</a>
 					<li><a href="#">Logout</a>
 				</ul>
 				<!-- /Secondary navigation -->
-	
+
 				<!-- Container style -->
 				<div class="container-inner">
-	
+
 					<!-- Left (navigation) side -->
 <?php include('sidebar.php'); ?>
 					<!-- /Left (navigation) side -->
-					
+
 					<!-- Right (content) side -->
 					<!-- Main content -->
 					<div class="content">
-					
-						<!-- Page header -->
-						<header class="page-header">
+				
+						<!-- Page container -->
+						<section class="page-container" role="main">
 
-							<!-- Slide btn for sidebar navigation -->
+							<!-- Nav slide button -->
 							<a class="nav-slide" href="#nav">
 								<span class="icon-align-justify"></span>
 							</a>
-
-							<h1>Welcome, <?php echo htmlentities($_SESSION['username']); ?>!</h1>
-							<p>Welcome to Detnat booter source. If you have any questions you can open a support ticket on our sales website found here: http://hostcookie.me/panel</p>
-						</header>
-						<!-- /Page header -->
-						
-						<!-- Page container -->
-						<section class="page-container" role="main">
-						
+							
 							<!-- Breadcrumbs -->
 							<ul class="breadcrumb">
 								<li><a href="#"><span class="icon-home"></span> Home</a> <span class="icon-chevron-right"></span></li>
-								<li><a href="#"><?php echo $name; ?></a> <span class="icon-chevron-right"></span></li>
-								<li class="active">Dashboard</li>
+								<li class="active">Hub</li>
 							</ul>
 							<!-- Breadcrumbs -->
+						
 							
 							<!-- Grid row -->
-							<div class="row">
+							<div class="row-fluid">
 							
-								<!-- Data block -->
-								<article class="span12 data-block">
+								<!-- Data (buttons) block -->
+								<article class="span12 data-block tabbed-block highlight highlight-red">
 									<div class="data-container">
-										<section>
-											
-											
-											<!-- Widgets -->
-											<ul class="widgets">
-												<li>
-														<span class="widget-label">Estimated power</span>
-														<strong>4Gbps</strong>
-												</li>
-												<li>
-														<span class="widget-label">Total Boots</span>
-														<strong><?php echo $stats -> totalBoots($odb); ?></strong>
-												</li>
-												<li>
-														<span class="widget-label">Total Users</span>
-														<strong><?php echo $stats -> totalUsers($odb); ?></strong>
-												</li>
-												<li>
-														<span class="widget-label">Boots Running</span>
-														<strong><?php echo $stats -> runningBoots($odb); ?></strong>
-												</li>
+										<header>
+											<h2>HUB</h2>
+											<ul class="data-header-actions tabs">
+												<li class="demoTabs active"><a href="#horizontal">Detnat HUB</a></li>
 											</ul>
-											<!-- /Widgets -->
-											
-											<p>We try to keep a uptime percentage of >95%.</p>
-											
-										</section>
-									</div>
-								</article>
-								<!-- /Data block -->
-								
-							</div>
-							<!-- /Grid row -->
-	
-							<!-- Grid row -->
-							<div class="row">
-							
-								<!-- Data block -->
-								<article class="span4 data-block data-block-alt highlight highlight-green">
-									<div class="data-container">
-										<header>
-											<h2><span class="icon-signal"></span> Statistics</h2>
 										</header>
-										<section>
-											<ul class="stats">
-												<li>
-													<strong class="stats-count"><?php echo $stats -> totalBootsForUser($odb, $_SESSION['username']); ?></strong>
-													<p>Your total boots</p>
-												</li>
-											</ul>
-										</section>
-									</div>
-								</article>
-								<!-- /Data block -->
-								
-								<!-- Data block -->
-								<article class="span4 data-block data-block-alt highlight todo-block">
-									<div class="data-container">
-										<header>
-											<h2><span class="icon-edit"></span> Upcoming updates</h2>
-										</header>
-										<section>
-											<form>
-												<table class="table">
-													<tbody>
-														<tr>
-															<td></td>
-															<td>
-																<p>Upgrade network protection</p>
-															</td>
-														</tr>
-														<tr>
-															<td></td>
-															<td>
-																<p>Improve configuration panel</p>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</form>
-										</section>
-									</div>
-								</article>
-								<!-- /Data block -->
-								
-								<!-- Data block -->
-								<article class="span4 data-block-alt data-block">
-									<div class="data-container">
-										<header>
-											<h2><span class="icon-refresh"></span> News</h2>									
-										</header>
-										<section>
-											<div id="accordion1" class="accordion">
-												<div class="accordion-group">
-													<div class="accordion-heading">
-														<a class="accordion-toggle" href="#collapseOne" data-parent="#accordion1" data-toggle="collapse"> 7/05/2013 <span class="caret"></span></a>
-													</div>
-													<div id="collapseOne" class="accordion-body collapse">
-														<div class="accordion-inner">ChemDDOS Protection is now launched.</div>
-													</div>
-												</div>
-											</div>
-										</section>
-									</div>
-								</article>
-								<!-- /Data block -->
-								
-							</div>
-							<!-- /Grid row -->
-	
-							<div class="alert alert-info fade in">
-								<button class="close" data-dismiss="alert">&times;</button>
-								<strong>Info!</strong> You can submit a support ticket here: http://hostcookie.me/panel.
-							</div>
-	
-							<!-- Grid row -->
-							<div class="row">
-								
-								<!-- Data block -->
 
-								<!-- /Data block -->
-								
-								<!-- Data block -->
-								<article class="span8 data-block">
-									<div class="data-container">
-										<section>
-											<div class='fullcalendar'></div>
+										<!-- Tab content -->
+										<section class="tab-content">
+													
+											<!-- Tab #horizontal -->
+											<div class="tab-pane fade in active" id="horizontal">
+											
+												<!-- Grid row -->
+												<div class="row-fluid">
+
+													<article class="span12 data-block data-block-alt">
+														<div class="data-container">
+
+															<section>
+																<form class="form-horizontal">
+																	<fieldset>
+																		<legend>Ip Logger</legend>
+																		<?php 
+		if (isset($_POST['clearBtn']))
+		{
+			$SQL = $odb -> prepare("DELETE FROM `iplogs` WHERE `userID` = :id");
+			$SQL -> execute(array(':id' => $_SESSION['ID']));
+			echo '<div class="nNote nSuccess hideit"><p><strong>SUCCESS: </strong>IP Logs Has Been Cleared</p></div>';
+		}
+		?>
+		<form action="" class="form" method="POST">
+            <fieldset>
+                <div class="widget">
+                    <div class="title"><img src="images/icons/dark/list.png" alt="" class="titleIcon" /><h6>IP Log</h6></div>
+                    <div class="formRow">
+                        <label>Your Link</label>
+                        <div class="formRight"><input type="text" value="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/funny.php?id='.$_SESSION['ID'];?>"/></div>
+                        <div class="clear"></div>
+					</div>
+					<div class="formRow">
+						<input type="submit" value="Clear Logs" name="clearBtn" class="dblueB logMeIn" />
+						<div class="clear"></div>I Also suggest taking Your Url and Shrinking it at www.tinyurl.com For a More convinceing Link.
+                    </div>
+                </div>
+            </fieldset>
+        </form> 
+		<div class="widget">
+          <div class="title"><img src="images/icons/dark/frames.png" alt="" class="titleIcon" /><h6>Logs</h6></div>
+            <table cellpadding="0" cellspacing="0" width="100%" class="sTable">
+                <thead>
+                    <tr>
+                        <td>IP</td>
+                        <td>Date</td>
+                    </tr>
+                </thead>
+                <tbody>
+				<?php
+				$SQLGetLogs = $odb -> prepare("SELECT * FROM `iplogs` WHERE `userID` = :id ORDER BY `date` DESC");
+				$SQLGetLogs -> execute(array(':id' => $_SESSION['ID']));
+				while($getInfo = $SQLGetLogs -> fetch(PDO::FETCH_ASSOC))
+				{
+					$loggedIP = $getInfo['logged'];
+					$date = date("m-d-Y, h:i:s a" ,$getInfo['date']);
+					echo '<tr><td><center>'.$loggedIP.'</center></td><td><center>'.$date.'</center></td></tr>';
+				}
+					
+				?>
+																	</fieldset>
+																</form>
+															</section>
+
+														</div>
+													</article>
+
+												</div>
+												<!-- /Grid row -->
+
+											</div>
+											<!-- Tab #horizontal -->
+												
 										</section>
+										<!-- /Tab content -->
+
 									</div>
-								</article>
-								<!-- /Data block -->
-								
+								<article>
+								<!-- /Data (buttons) block -->
+
 							</div>
 							<!-- /Grid row -->
-							
+					
+
 						</section>
 						<!-- /Page container -->
-						
+
 					</div>
 					<!-- /Main content -->
 					<!-- /Right (content) side -->
-					
+
 				</div>
 				<!-- /Container style -->
-				
+
 			</div>
 			<!-- /Main page container -->
-			
+
 			<!-- Push space for footer -->
 			<div id="push"></div>
 			
 		</div>
 		<!-- /Wrap all page content for sticky footer -->
-		
+
 		<!-- Main footer -->
 		<footer id="footer">
 			<ul>
@@ -291,223 +248,109 @@ if (!($user -> notBanned($odb)))
 		<script src="js/navigation.js"></script>
 
 		<!-- Bootstrap scripts -->
-		<!--
-		<script src="js/bootstrap/bootstrap-tooltip.js"></script>
-		<script src="js/bootstrap/bootstrap-dropdown.js"></script>
-		<script src="js/bootstrap/bootstrap-button.js"></script>
-		<script src="js/bootstrap/bootstrap-alert.js"></script>
-		<script src="js/bootstrap/bootstrap-popover.js"></script>
-		<script src="js/bootstrap/bootstrap-collapse.js"></script>
-		<script src="js/bootstrap/bootstrap-transition.js"></script>
-		-->
 		<script src="js/bootstrap/bootstrap.min.js"></script>
-
-		<!-- jQuery Flot Charts -->
-		<!--[if lte IE 8]>
-			<script language="javascript" type="text/javascript" src="js/plugins/flot/excanvas.min.js"></script>
-		<![endif]-->
-
-		<script src="js/plugins/flot/jquery.flot.js"></script>
+		
+		<!-- Fileupload and Inputmask plugin -->
+		<script src="js/plugins/fileupload/bootstrap-fileupload.js"></script>
+		<script src="js/plugins/inputmask/bootstrap-inputmask.js"></script>
+		
+		<!-- jQuery TagsInput -->
+		<script src="js/plugins/tagsInput/jquery.tagsinput.min.js"></script>
 		
 		<script>
 			$(document).ready(function() {
 			
-				// Demo #1
-				// we use an inline data source in the example, usually data would be fetched from a server
-				var data = [], totalPoints = 300;
-				function getRandomData() {
-					if (data.length > 0)
-						data = data.slice(1);
-				
-					// do a random walk
-					while (data.length < totalPoints) {
-						var prev = data.length > 0 ? data[data.length - 1] : 50;
-						var y = prev + Math.random() * 10 - 5;
-						if (y < 0)
-							y = 0;
-						if (y > 100)
-							y = 100;
-						data.push(y);
-					}
-				
-					// zip the generated y values with the x values
-					var res = [];
-					for (var i = 0; i < data.length; ++i)
-						res.push([i, data[i]])
-					return res;
-				}
-				
-				// setup control widget
-				var updateInterval = 80;
-				$("#updateInterval").val(updateInterval).change(function () {
-					var v = $(this).val();
-					if (v && !isNaN(+v)) {
-						updateInterval = +v;
-					if (updateInterval < 1)
-						updateInterval = 1;
-					if (updateInterval > 2000)
-						updateInterval = 2000;
-					$(this).val("" + updateInterval);
-					}
-				});
-				
-				// setup plot
-				var options = {
-					series: { color: '#389abe' }, // drawing is faster without shadows
-					yaxis: { min: 0, max: 100 },
-					xaxis: { show: false },
-					grid: { backgroundColor: 'transparent', color: '#b2b2b2', borderColor: '#e7e7e7', borderWidth: 1 }
-				};
-				var plot = $.plot($("#demo-1"), [ getRandomData() ], options);
-				
-				function update() {
-					plot.setData([ getRandomData() ]);
-					// since the axes don't change, we don't need to call plot.setupGrid()
-					plot.draw();
-					setTimeout(update, updateInterval);
-				}
-				
-				update();
+				$('.tagsinput').tagsInput();
 			
 			});
 		</script>
 		
-		<!-- Block TODO list -->
-		<script>
-			$(document).ready(function() {
-				
-				$('.todo-block input[type="checkbox"]').click(function(){
-					$(this).closest('tr').toggleClass('done');
-				});
-				$('.todo-block input[type="checkbox"]:checked').closest('tr').addClass('done');
-				
-			});
-		</script>
-		
-		<!-- jQuery FullCalendar -->
-		<script src="js/plugins/fullCalendar/jquery.fullcalendar.min.js"></script>
+		<!-- jQuery jWYSIWYG -->
+		<script src="js/plugins/jWYSIWYG/jquery.wysiwyg.js"></script>
 		
 		<script>
 			$(document).ready(function() {
+				
+				$('.wysiwyg').wysiwyg({
+					controls: {
+						bold          : { visible : true },
+						italic        : { visible : true },
+						underline     : { visible : true },
+						strikeThrough : { visible : true },
+						
+						justifyLeft   : { visible : true },
+						justifyCenter : { visible : true },
+						justifyRight  : { visible : true },
+						justifyFull   : { visible : true },
 			
-				var date = new Date();
-				var d = date.getDate();
-				var m = date.getMonth();
-				var y = date.getFullYear();
-				
-				$('.fullcalendar').fullCalendar({
-					header: {
-						left: 'title',
-						center: '',
-						right: 'today month,basicWeek prev,next'
+						indent  : { visible : true },
+						outdent : { visible : true },
+			
+						subscript   : { visible : true },
+						superscript : { visible : true },
+						
+						undo : { visible : true },
+						redo : { visible : true },
+						
+						insertOrderedList    : { visible : true },
+						insertUnorderedList  : { visible : true },
+						
+						cut   : { visible : true },
+						copy  : { visible : true },
+						paste : { visible : true },
+						
+						code : { visible : false }
 					},
-					buttonText: {
-						prev: '<span class="icon-chevron-left"></span>',
-						next: '<span class="icon-chevron-right"></span>'
-					},
-					editable: true,
-					events: [
-						{
-							title: 'All Day Event',
-							start: new Date(y, m, 1)
-						},
-						{
-							title: 'Long Event',
-							start: new Date(y, m, d-5),
-							end: new Date(y, m, d-2),
-							className: 'event-red'
-						},
-						{
-							id: 999,
-							title: 'Repeating Event',
-							start: new Date(y, m, d-3, 16, 0),
-							allDay: false,
-							className: 'event-yellow'
-						},
-						{
-							id: 999,
-							title: 'Repeating Event',
-							start: new Date(y, m, d+4, 16, 0),
-							allDay: false,
-							className: 'event-green'
-						},
-						{
-							title: 'Meeting',
-							start: new Date(y, m, d, 10, 30),
-							allDay: false,
-							className: 'event-blue'
-						},
-						{
-							title: 'Lunch',
-							start: new Date(y, m, d, 12, 0),
-							end: new Date(y, m, d, 14, 0),
-							allDay: false,
-							className: 'event-red'
-						},
-						{
-							title: 'Birthday Party',
-							start: new Date(y, m, d+1, 19, 0),
-							end: new Date(y, m, d+1, 22, 30),
-							allDay: false,
-							className: 'event-green'
-						},
-						{
-							title: 'Walking Pixels website',
-							start: new Date(y, m, 28),
-							end: new Date(y, m, 29),
-							url: 'http://www.walkingpixels.com/',
-							className: 'event-black'
-						}
-					]
-				});
-				
-			});
-		</script>
-		
-		<!-- jQuery jGrowl -->
-
-		
-		<!-- jQuery SparkLines -->
-		<script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
-		
-		<script>
-			$(document).ready(function() {
-			
-				// Sample line chart
-				$('.sparkline.line').sparkline('html', {
-					height: '45px',
-					width: '90px',
-					lineColor: '#6CC84C',
-					fillColor: '#b1dfa1',
-					spotColor: '#3a87ad',
-					minSpotColor: false,
-					maxSpotColor: false,
-					spotRadius: 3
-				});
-				
-				// Sample bar chart
-				$('.sparkline.bar').sparkline([17, 23, 18, 14, 18, 19, 13], {
-					type: 'bar',
-					height: '45px',
-					barWidth: '8px',
-					barColor: '#3a87ad',
-					tooltipFormat: '{{offset:names}}: {{value}} orders',
-					tooltipValueLookups: {
-					names: {
-						0: 'Monday',
-						1: 'Tuesday',
-						2: 'Wednesday',
-						3: 'Thursday',
-						4: 'Friday',
-						5: 'Saturday',
-						6: 'Sunday'
+					events: {
+						click: function(event) {
+							if ($("#click-inform:checked").length > 0) {
+								event.preventDefault();
+								alert("You have clicked jWysiwyg content!");
+							}
 						}
 					}
 				});
 				
 			});
 		</script>
-
+		
+		<!-- Wysihtml5 -->
+		<script src="js/plugins/wysihtml5/wysihtml5-0.3.0.js"></script>
+		<script src="js/plugins/wysihtml5/bootstrap-wysihtml5.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				
+				$('.wysihtml5').wysihtml5();
+				
+			});
+		</script>
+		
+		<!-- Colorpicker -->
+		<script src="js/plugins/colorpicker/bootstrap-colorpicker.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				
+				var preview = $('.colorpicker-preview')[0].style;
+				$('.colorpicker').colorpicker().on('changeColor', function(ev){
+					preview.backgroundColor = ev.color.toHex();
+				});
+				
+			});
+		</script>
+		
+		<!-- Datepicker -->
+		<script src="js/plugins/datepicker/bootstrap-datepicker.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				
+				$('.datepicker').datepicker();
+				
+			});
+		</script>
+		
 		<!-- Page slide plugin -->
 		<script src="js/plugins/pageSlide/jquery.pageslide.min.js"></script>
 
