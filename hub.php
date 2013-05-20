@@ -154,7 +154,13 @@ if (!($user -> notBanned($odb)))
 																		</div>
 																		<div class="control-group">
 																			<label class="control-label" for="input">Port</label>
-																			<div class="controls">
+																			<div class="formRow">
+																			<select name="portSelect" onchange="this.form.elements['port'].value=this.value">
+																			<option value="">Select A Preset Port</option>
+																			<option value="80">Home Connection: (80) </option>
+																			<option value="3074">Xbox: (3074)</option>
+																			<option value="3478">PS3: (3478)</option>
+																			</select>
 																				<input id="input" class="input-xlarge" type="text">
 																				<p class="help-block">The port to flood</p>
 																			</div>
@@ -166,22 +172,30 @@ if (!($user -> notBanned($odb)))
 																				<p class="help-block">How long should we attack</p>
 																			</div>
 																		</div>																		
-																		<div class="control-group">
-																			<label class="control-label" for="select">Method</label>
-																			<div class="controls">
-																				<select id="select">
-																					<option>UDP</option>
-																					<option>SSYN</option>
-																					<option>ESSYN</option>
-																					<option>HEAD</option>
-																					<option>RUDY</option>
-																					<option>ARME</option>
-																					<option>SLOW</option>
-																					<option>POST</option>
-																					<option>GET</option>
-																				</select>
-																			</div>
-																		</div>
+																		<div class="row">
+      <label for="method"></label>
+
+                  <div class="formRow">
+                        <label for="labelFor">Method</label>
+                        <div class="formRight">
+       <select name=method id=method>
+<optgroup label="Layer-4">
+                                <option value="udp" selected>UDP</option>
+                                <option value="udplag">UDP-LAG</option>
+                                <option value="ssyn">SSYN</option>
+                              </optgroup>
+                            
+                              <optgroup label="Layer-7">
+                                  <option value="rudy">RUDY</option>
+                                  <option value="arme">ARME</option>
+                                  <option value="get">GET</option>
+                                  <option value="head">HEAD</option>
+                                  <option value="post">POST</option>
+                                  <option value="slow">SLOWLORIS</option>
+
+                              </optgroup>
+       </select>
+      </div>
 																		<div class="form-actions">
 																			<button class="btn btn-alt btn-large btn-primary" type="submit">Send Attack</button>
 																		</div>

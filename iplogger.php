@@ -29,7 +29,6 @@ include 'sidebar.php';
 ?>
 <!-- Right side -->
 <div id="rightSide">
-<?php include 'header.php';?>
     
     
 
@@ -100,9 +99,7 @@ include 'sidebar.php';
             </table>
         </div>
     </div>
-    <!-- Footer line -->
-    <?php include 'footer.php';?>
-
+    
 </div>
 
 <div class="clear"></div>

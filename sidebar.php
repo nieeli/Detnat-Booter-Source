@@ -46,7 +46,7 @@ require_once 'includes/db.php';
 									<a href="proxy.php" class="no-submenu"><span class="icon-signal"></span>Resolvers</a>
 								</li>
 								<li>
-									<a href="proxy.php" class="no-submenu"><span class="icon-signal"></span>IP Logger</a>
+									<a href="iplogger.php" class="no-submenu"><span class="icon-signal"></span>IP Logger</a>
 								</li>
 	<?php
 	}
