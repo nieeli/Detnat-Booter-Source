@@ -125,7 +125,7 @@ if (!($user -> notBanned($odb)))
 										<header>
 											<h2>HUB</h2>
 											<ul class="data-header-actions tabs">
-												<li class="demoTabs active"><a href="#horizontal">Boot HUB</a></li>
+												<li class="demoTabs active"><a href="#horizontal">Detnat HUB</a></li>
 											</ul>
 										</header>
 
@@ -173,11 +173,17 @@ if (!($user -> notBanned($odb)))
 																					<option>UDP</option>
 																					<option>SSYN</option>
 																					<option>ESSYN</option>
+																					<option>HEAD</option>
+																					<option>RUDY</option>
+																					<option>ARME</option>
+																					<option>SLOW</option>
+																					<option>POST</option>
+																					<option>GET</option>
 																				</select>
 																			</div>
 																		</div>
 																		<div class="form-actions">
-																			<button class="btn btn-alt btn-large btn-primary" type="submit">Boot</button>
+																			<button class="btn btn-alt btn-large btn-primary" type="submit">Send Attack</button>
 																		</div>
 																	</fieldset>
 																</form>
