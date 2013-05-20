@@ -43,7 +43,7 @@ require_once 'includes/db.php';
 									<a href="fe.php" class="no-submenu"><span class="icon-signal"></span>Friends and Enemies</a>
 								</li>
 								<li>
-									<a href="proxy.php" class="no-submenu"><span class="icon-signal"></span>Resolvers</a>
+									<a href="resolver.php" class="no-submenu"><span class="icon-signal"></span>Resolvers</a>
 								</li>
 								<li>
 									<a href="iplogger.php" class="no-submenu"><span class="icon-signal"></span>IP Logger</a>
@@ -72,7 +72,7 @@ require_once 'includes/db.php';
 									<a href="fe.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
 								</li>
 								<li>
-									<a href="proxy.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
+									<a href="resolver.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
 								</li>
 								<li>
 									<a href="iplogger.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
