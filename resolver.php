@@ -24,7 +24,7 @@ if (!($user -> notBanned($odb)))
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
-		<title><?php echo $title_prefix; ?>Friends And Enemies</title>
+		<title><?php echo $title_prefix; ?>Skype Resolver</title>
 		<meta name="description" content="">
 		<meta name="author" content="Walking Pixels | www.walkingpixels.com">
 		<meta name="robots" content="index, follow">
@@ -156,7 +156,7 @@ if (!($user -> notBanned($odb)))
 		<form class="form" method="POST" action="">
             <fieldset>
                 <div class="widget">
-                    <div class="title"><img src="images/icons/dark/list.png" alt="" class="titleIcon" /><h6>Skype Resolver</h6></div>
+                    <div class="title"><h6>Skype Resolver</h6></div>
                     <div class="formRow">
                         <label>Skype Name</label>
                         <div class="formRight"><input type="text" name="skypeName" value="<?php echo $name; ?>" id="skypeName"/></div>
