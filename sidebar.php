@@ -40,7 +40,7 @@ require_once 'includes/db.php';
 									<a href="hub.php" class="no-submenu"><span class="icon-signal"></span>HUB</a>
 								</li>
 								<li>
-									<a href="proxy.php" class="no-submenu"><span class="icon-signal"></span>Friends and Enemies</a>
+									<a href="fe.php" class="no-submenu"><span class="icon-signal"></span>Friends and Enemies</a>
 								</li>
 								<li>
 									<a href="proxy.php" class="no-submenu"><span class="icon-signal"></span>Resolvers</a>
@@ -63,19 +63,19 @@ require_once 'includes/db.php';
 									<a href=""><span class="icon-gift"></span>Admin</a>
 									<ul>
 								<li>
-									<a href="proxy.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
+									<a href="index.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
+								</li>
+								<li>
+									<a href="hub.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
+								</li>
+								<li>
+									<a href="fe.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
 								</li>
 								<li>
 									<a href="proxy.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
 								</li>
 								<li>
-									<a href="proxy.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
-								</li>
-								<li>
-									<a href="proxy.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
-								</li>
-								<li>
-									<a href="proxy.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
+									<a href="iplogger.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
 								</li>									
 									</ul>
 								</li>
