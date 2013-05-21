@@ -164,7 +164,7 @@ if (!($user -> notBanned($odb)))
 					</div>
 					<div class="formRow">
 						<?php echo $resolved;?>
-						<input type="submit" value="Resolve" name="resolveBtn" class="dblueB logMeIn" />
+						<button class="btn btn-alt btn-large btn-primary" type="submit" value="Resolve" name="resolveBtn">Resolve</button>
 						<div class="clear"></div>
                     </div>
                 </div>
