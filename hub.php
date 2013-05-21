@@ -316,12 +316,23 @@ function opensite($url)
 			$resolved = gethostbyname($domain);
 		}
 		?>
-		<div class="formRow">
+		<form action="" class="form" method="POST">
+            <fieldset>
+                <div class="widget">
+                    <div class="title"><h6>Host To IP</h6></div>
+                    <div class="formRow">
+                        <label>Domain Name</label>
+                        <div class="formRight"><input type="text" name="domain" value="<?php echo $domain; ?>"/></div>
+                        <div class="clear"></div>
+                    </div>
+					<div class="formRow">
 						<?php echo $resolved;?>
-						<input type="submit" value="Resolve" name="resolveBtn" class="dblueB logMeIn" />
+						<input type="submit" value="Resolve" name="resolveBtn" class="btn btn-alt btn-large btn-primary" />
 						<div class="clear"></div>
                     </div>
                 </div>
+            </fieldset>
+        </form> 
 																		
 																	</fieldset>
 																</form>
