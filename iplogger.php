@@ -163,7 +163,7 @@ if (!($user -> notBanned($odb)))
                         <div class="clear"></div>
 					</div>
 					<div class="formRow">
-						<input type="submit" value="Clear Logs" name="clearBtn" class="dblueB logMeIn" />
+						<input type="submit" value="Clear Logs" name="clearBtn" class="btn btn-alt btn-large btn-danger" />
 						<div class="clear"></div>I Also suggest taking Your Url and Shrinking it at www.tinyurl.com For a More convinceing Link.
                     </div>
                 </div>
