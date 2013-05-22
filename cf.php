@@ -16,6 +16,22 @@ if (!($user -> notBanned($odb)))
 {
 	header('location: login.php');
 	die();
+	}
+function get_host($ip){
+        $ptr= implode(".",array_reverse(explode(".",$ip))).".in-addr.arpa";
+        $host = dns_get_record($ptr,DNS_PTR);
+        if ($host == null) return $ip;
+        else return $host[0]['target'];
+} 
+function isCloudflare($ip)
+{
+	$host = get_host($ip);
+	if($host=="cf-".implode("-", explode(".", $ip)).".cloudflare.com")
+	{
+		return true;
+	} else {
+		return false;
+	}
 }
 ?>
 <!DOCTYPE html>
@@ -24,7 +40,7 @@ if (!($user -> notBanned($odb)))
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
-		<title><?php echo $title_prefix; ?>Friends And Enemies</title>
+		<title><?php echo $title_prefix; ?>Cloudflare Resolver</title>
 		<meta name="description" content="">
 		<meta name="author" content="Walking Pixels | www.walkingpixels.com">
 		<meta name="robots" content="index, follow">
@@ -111,7 +127,7 @@ if (!($user -> notBanned($odb)))
 							<!-- Breadcrumbs -->
 							<ul class="breadcrumb">
 								<li><a href="#"><span class="icon-home"></span>Home</a> <span class="icon-chevron-right"></span></li>
-								<li class="active">Friends And Enemies</li>
+								<li class="active">Cloudflare Resolver</li>
 							</ul>
 							<!-- Breadcrumbs -->
 						
@@ -123,9 +139,9 @@ if (!($user -> notBanned($odb)))
 								<article class="span12 data-block tabbed-block highlight highlight-red">
 									<div class="data-container">
 										<header>
-											<h2>Friends And Enemies</h2>
+											<h2>Cloudflare Resolver</h2>
 											<ul class="data-header-actions tabs">
-												<li class="demoTabs active"><a href="#horizontal">Detnat Friends & Enemy Logger</a></li>
+												<li class="demoTabs active"><a href="#horizontal">Detnat Cloudflare Resolver</a></li>
 											</ul>
 										</header>
 
@@ -144,124 +160,88 @@ if (!($user -> notBanned($odb)))
 															<section>
 																<form class="form-horizontal">
 																	<fieldset>
-																		<legend>Friends And Enemies</legend>
-																		<!--Fill this in with Friends and Enemies Logger Code Will do Soon! -->
-																		 <div class="wrapper">
-       
-        <!-- Form -->
-		<?php
-		if (isset($_POST['addBtn']))
+																		<legend>Cloudflare Resolver</legend>
+																		<!--Fill this in with cloudflare resolver Code Will do Soon! -->
+																		 <?php
+		$resolved = '';
+		if (isset($_POST['resolveBtn']))
 		{
-			$ipAdd = $_POST['ipAdd'];
-			$noteAdd = $_POST['noteAdd'];
-			$type = $_POST['type'];
-			$errors = array();
-			if (!filter_var($ipAdd, FILTER_VALIDATE_IP))
+			$resolved = $_POST['toResolve'];
+			$lookupArr = array("mail.", "direct.", "direct-connect.", "direct-connect-mail.", "cpanel.", "ftp.");
+			$output = array();
+			foreach ($lookupArr as $lookupKey)
 			{
-				$errors[] = 'IP is invalid';
-			}
-			if (empty($ipAdd) || empty($type))
-			{
-				$errors[] = 'Please verify all fields';
-			}
-			$allowedTypes = array('f', 'e');
-			if (!in_array($type,$allowedTypes))
-			{
-				$errors[] = 'Type is invalid';
-			}
-			if (empty($errors))
-			{
-				$SQLinsert = $odb -> prepare("INSERT INTO `fe` VALUES(NULL, :userID, :type, :ip, :note)");
-				$SQLinsert -> execute(array(':userID' => $_SESSION['ID'], ':type' => $type, ':ip' => $ipAdd, ':note' => $noteAdd));
-				echo '<div class="nNote nSuccess hideit"><p><strong>SUCCESS: </strong>IP has been added</p></div>';
-			}
-			else
-			{
-				echo '<div class="nNote nFailure hideit"><p><strong>ERROR:</strong><br />';
-				foreach($errors as $error)
+				$lookupHost = $lookupKey . $resolved;
+				$foundHost = gethostbyname($lookupHost);
+				
+				if ($foundHost == $lookupHost)
 				{
-					echo '-'.$error.'<br />';
+					$output[] = "No DNS Found";
 				}
-				echo '</div>';
+				else
+				{
+					$extra = "<font color=\"green\">(Not Cloudflare)</font>";
+					if(isCloudflare($foundHost))
+					{
+						$extra = "<font color=\"red\">(Cloudflare)</font>";
+					}
+					$output[] = $foundHost." ".$extra;
+				}
 			}
+
 		}
 		?>
-        <form action="" class="form" method="POST">
+		<form class="form" method="POST" action="">
             <fieldset>
                 <div class="widget">
-                    <div class="title"><img src="images/icons/dark/list.png" alt="" class="titleIcon" /><h6>Add IP:</h6></div>
+                    <div class="title"><img src="images/icons/dark/list.png" alt="" class="titleIcon" /><h6>Cloudflare Resolver</h6></div>
                     <div class="formRow">
-                        <label>IP:</label>
-                        <div class="formRight"><input type="text" name="ipAdd" maxlength="15" /></div>
+                        <label>Cloudflare Domain</label>
+                        <div class="formRight"><input type="text" name="toResolve" value="" id="toResolve"/></div>
                         <div class="clear"></div>
-                    </div>
-                    <div class="formRow">
-                        <label>Note:</label>
-                        <div class="formRight"><textarea style="resize:none;" rows="4" cols="" name="noteAdd" class="autoGrow"></textarea></div>
-                        <div class="clear"></div>
-                    </div>
+					</div>
 					<div class="formRow">
-                        <label>Type:</label>
-                        <div class="formRight">
-                            <select name="type" >
-                                <option selected = "selected">Choose a type....</option>
-                                <option value="f">Friend</option>
-                                <option value="e">Enemy</option>
-                            </select>           
-                        </div>             
-                        <div class="clear"></div>
-                    </div>
-					<div class="formRow">
-						<input type="submit" value="Add" name="addBtn" class="dblueB logMeIn" />
-						 <div class="clear"></div>
+						<input type="submit" value="Resolve" name="resolveBtn" class="btn btn-alt btn-large btn-primary" />
+						<div class="clear"></div>
                     </div>
                 </div>
             </fieldset>
-		</form>
-		
-		<?php
-		if (isset($_POST['deleteBtn']))
-		{
-			$deletes = $_POST['deleteCheck'];
-			foreach($deletes as $delete)
-			{
-				$SQL = $odb -> prepare("DELETE FROM `fe` WHERE `ID` = :id AND `userID` = :uid LIMIT 1");
-				$SQL -> execute(array(':id' => $delete, ':uid' => $_SESSION['ID']));
-			}
-			echo '<div class="nNote nSuccess hideit"><p><strong>SUCCESS: </strong>IP(s) Has Been Removed</p></div>';
-		}
-		?>
-		<form action="" class = "form" method="POST">
+        </form> 
 		<div class="widget">
-			<div class="title"><span class="titleIcon"><input type="checkbox" id="deleteCheck[]" name="deleteCheck" /></span><h6>Friends/Enemy</h6>
-			<input type="submit" style="margin-top:5px; margin-right:5px;" value="Delete" name="deleteBtn" class="dblueB logMeIn" /></div>
-			
-			  <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck" id="checkAll">
-				  <thead>
-					  <tr>
-						  <td><img src="images/icons/tableArrows.png" alt="" /></td>
-						  <td>IP</td>
-						  <td>Type</td>
-						  <td>Note</td>
-					  </tr>
-				  </thead>
-				  <tbody>
-				  <?php
-				  $SQLSelect = $odb -> prepare("SELECT * FROM `fe` WHERE `userID` = :user ORDER BY `ID` DESC");
-				  $SQLSelect -> execute(array(':user' => $_SESSION['ID']));
-				  while ($show = $SQLSelect -> fetch(PDO::FETCH_ASSOC))
-				  {
-					$ipShow = $show['ip'];
-					$noteShow = $show['note'];
-					$rowID = $show['ID'];
-					$type = ($show['type'] == 'f') ? 'Friend' : 'Enemy';
-					echo '<tr><td><input type="checkbox" name="deleteCheck[]" value="'.$rowID.'"/></td><td>'.$ipShow.'</td><td>'.$type.'</td><td>'.htmlentities($noteShow).'</td></tr>';
-				  }
-				  ?>
-				  </tbody>
-			  </table>
+          <div class="title"><img src="images/icons/dark/frames.png" alt="" class="titleIcon" /><h6>IP Info</h6></div>
+            <table cellpadding="0" cellspacing="0" width="100%" class="sTable">
+                <tbody>
+					<tr>
+                        <td><strong>Domain:</strong></td>
+						<td><?php echo $resolved;?></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mail:</strong></td>
+						<td><?php echo $output[0];?></td>
+                    </tr>
+                    <tr>
+						<td><strong>Direct:</strong></td>
+						<td><?php echo $output[1];?></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Direct-Connect:</strong></td>
+						<td><?php echo $output[2];?></td>
+                    </tr>
+		    <tr>
+                        <td><strong>Direct-Connect-Mail:</strong></td>
+                                                <td><?php echo $output[3];?></td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>CPanel:</strong></td>
+						<td><?php echo $output[4];?></td>
+                    </tr><tr>
+                        <td><strong>FTP:</strong></td>
+						<td><?php echo $output[5];?></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-	</form>
     </div>
 																		
 																		
