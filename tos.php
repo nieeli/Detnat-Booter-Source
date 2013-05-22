@@ -11,7 +11,7 @@
 By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable copyright and trade mark law.</li>
 <li><br>-2. Use License
 
-Permission is granted to stress test dedicated servers and networks owned by you. This is the oppurtunity to make your firewalls better, not to misuse against the law. This is a license given to you and anything you do while on http://dotbooter.com is your own responsibility as we are not liable. Under this license you may not:
+Permission is granted to stress test dedicated servers and networks owned by you. This is the oppurtunity to make your firewalls better, not to misuse against the law. This is a license given to you and anything you do while on (sitename.com) is your own responsibility as we are not liable. Under this license you may not:
 Modify or attempt to download any source code connected tos (sitename.com);
 Intentionally send a ddos flood to an IP address not owned by yourself;
 spam any servers connected with (sitename.com) or related hosts;
