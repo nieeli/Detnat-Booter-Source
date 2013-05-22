@@ -43,7 +43,10 @@ require_once 'includes/db.php';
 									<a href="fe.php" class="no-submenu"><span class="icon-signal"></span>Friends and Enemies</a>
 								</li>
 								<li>
-									<a href="resolver.php" class="no-submenu"><span class="icon-signal"></span>Resolvers</a>
+									<a href="resolver.php" class="no-submenu"><span class="icon-signal"></span>Skype Resolver</a>
+								</li>
+								<li>
+									<a href="cloudflare.php" class="no-submenu"><span class="icon-signal"></span>Cloudflare Resolver</a>
 								</li>
 								<li>
 									<a href="iplogger.php" class="no-submenu"><span class="icon-signal"></span>IP Logger</a>
@@ -63,19 +66,22 @@ require_once 'includes/db.php';
 									<a href=""><span class="icon-gift"></span>Admin</a>
 									<ul>
 								<li>
-									<a href="index.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
+									<a href="index.php" class="no-submenu"><span class="icon-signal"></span>Dashboard</a>
 								</li>
 								<li>
-									<a href="hub.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
+									<a href="hub.php" class="no-submenu"><span class="icon-signal"></span>HUB</a>
 								</li>
 								<li>
-									<a href="fe.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
+									<a href="fe.php" class="no-submenu"><span class="icon-signal"></span>Friends and Enemies</a>
 								</li>
 								<li>
-									<a href="resolver.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
+									<a href="resolver.php" class="no-submenu"><span class="icon-signal"></span>Skype Resolver</a>
 								</li>
 								<li>
-									<a href="iplogger.php" class="no-submenu"><span class="icon-signal"></span>TCP Proxy</a>
+									<a href="cloudflare.php" class="no-submenu"><span class="icon-signal"></span>Cloudflare Resolver</a>
+								</li>
+								<li>
+									<a href="iplogger.php" class="no-submenu"><span class="icon-signal"></span>IP Logger</a>
 								</li>									
 									</ul>
 								</li>
