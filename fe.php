@@ -212,7 +212,7 @@ if (!($user -> notBanned($odb)))
                         <div class="clear"></div>
                     </div>
 					<div class="formRow">
-						<input type="submit" value="Add" name="addBtn" class="dblueB logMeIn" />
+						<input type="submit" value="Add" name="addBtn" class="btn btn-alt btn-large btn-primary" />
 						 <div class="clear"></div>
                     </div>
                 </div>
@@ -234,7 +234,7 @@ if (!($user -> notBanned($odb)))
 		<form action="" class = "form" method="POST">
 		<div class="widget">
 			<div class="title"><span class="titleIcon"><input type="checkbox" id="deleteCheck[]" name="deleteCheck" /></span><h6>Friends/Enemy</h6>
-			<input type="submit" style="margin-top:5px; margin-right:5px;" value="Delete" name="deleteBtn" class="dblueB logMeIn" /></div>
+			<input type="submit" style="margin-top:5px; margin-right:5px;" value="Delete" name="deleteBtn" class="btn btn-alt btn-large btn-danger" /></div>
 			
 			  <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck" id="checkAll">
 				  <thead>
